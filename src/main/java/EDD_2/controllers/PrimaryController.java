@@ -1,5 +1,6 @@
-package EDD_2;
+package EDD_2.controllers;
 
+import EDD_2.App;
 import java.io.IOException;
 import javafx.fxml.FXML;
 
