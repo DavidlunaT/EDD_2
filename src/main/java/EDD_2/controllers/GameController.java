@@ -46,6 +46,7 @@ public class GameController implements Initializable {
     private int playerTurn = 0;
 
     ArrayList<Button> buttons;
+    
 
 
     @Override
@@ -72,6 +73,8 @@ public class GameController implements Initializable {
     private void setupButton(Button button) {
         button.setOnMouseClicked(mouseEvent -> {
             setPlayerSymbol(button);
+            int pos = buttons.indexOf(button);
+            System.out.println(pos);
             button.setDisable(true);
             checkIfGameIsOver();
         });
@@ -122,6 +125,9 @@ public class GameController implements Initializable {
             //CREAR METODO
             //X winner
             if (line.equals("XXX")) {
+                buttons.forEach(button ->{
+                    button.setDisable(true);
+                });
                 winnerText.setText("X won!");
             }
 

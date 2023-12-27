@@ -8,10 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- *
- * @author David
- */
 public class Board {
     private int[] board ;
     private List<int[]> winnerPos = Arrays.asList(
@@ -33,9 +29,7 @@ public class Board {
     
     //cargar partida previa
     public Board(int[] boardLoaded){
-        board = boardLoaded;
-        
-        
+        board = boardLoaded;   
     }
     public Player checkWinner (Player player){
         if(isWinner(player)){
@@ -74,5 +68,10 @@ public class Board {
             board[pos] = idPlayer;
         }
     }
+
+    public int[] getBoard() {
+        return board;
+    }
+    
     
 }

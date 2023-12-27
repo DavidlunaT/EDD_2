@@ -17,6 +17,10 @@ public class Tree<E> {
         this.root = null; 
     }
     
+    public Tree(E root) {
+        this.root = new TreeNode<>(root);
+    }
+    
     public boolean isEmpty () {
         return this.root == null;
     }
