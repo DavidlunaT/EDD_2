@@ -103,23 +103,12 @@ public class GameController implements Initializable {
         if(playerTurn % 2 == 0){
             
             board.setMove(buttons.indexOf(button),playerX.getId());    
-
             button.setText("X"); //CAMBIAR POR BUTTON.SETGRAPHIC
-            
-            //for each para imprimir elemntos del array
-            for(int a: board.arrays()){
-                System.out.print(a);
-            }
-            System.out.println("");
             playerTurn = 1;
         } else{
             
             board.setMove(buttons.indexOf(button),playerCircle.getId());   
             button.setText("O"); //CAMBIAR POR BUTTON.SETGRAPHIC
-            for(int a: board.arrays()){
-                System.out.print(a);
-            }
-            System.out.println("");
             playerTurn = 0;
         }
     }

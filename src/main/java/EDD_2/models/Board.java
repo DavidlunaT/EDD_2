@@ -71,9 +71,7 @@ public class Board {
     public void setMove(int pos, int id){
         board[pos] = id;
     }
-    public int[] arrays(){
-        return board;
-    }
+   
     public void clear(){
         for(int i= 0; i<9; i++ ){
             board[i] = 0;
