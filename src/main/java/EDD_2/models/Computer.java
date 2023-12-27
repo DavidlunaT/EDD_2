@@ -10,15 +10,18 @@ package EDD_2.models;
  */
 public class Computer extends Player {
     
-    public int id;
+    private int id;
     
-
-
-    @Override
-    public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public Computer(int id){
+        this.id = id;
     }
+    
     public void calculateBestMove(){
         
+    }
+    
+    @Override
+    public int getId(){
+        return id;
     }
 }

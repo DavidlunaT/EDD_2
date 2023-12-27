@@ -12,5 +12,5 @@ public abstract class  Player  {
     
     private int id;
     
-    public abstract int getId();
+   public abstract int getId();
 }

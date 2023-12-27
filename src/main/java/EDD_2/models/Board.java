@@ -37,14 +37,14 @@ public class Board {
         
         
     }
-    public Player checkWinner (Player player){
-        if(isWinner(player)){
-            return player;
+    public int checkWinner (int id){
+        if(isWinner(id)){
+            return id;
         }
-        return null;
+        return 0;
     }
-    public boolean isWinner(Player player){
-        ArrayList<Integer> list = getMovesPlayer(player);
+    public boolean isWinner(int id){
+        ArrayList<Integer> list = getMovesPlayer(id);
         for(int i = 0; i < 8; i++){
             int n1 = winnerPos.get(i)[0];
             int n2 = winnerPos.get(i)[1];
@@ -56,10 +56,10 @@ public class Board {
         return false;       
         
     }
-    private ArrayList<Integer> getMovesPlayer(Player player){
+    private ArrayList<Integer> getMovesPlayer(int id){
         ArrayList<Integer> list = new ArrayList<>();
         
-        int idPlayer = player.getId();
+        int idPlayer = id;
         
         for(int i = 0; i<9 ; i++){
             if(idPlayer == board[i]){
@@ -68,10 +68,15 @@ public class Board {
         }
         return list;
     }
-    public void setMove(Player player, int pos){
-        int idPlayer = player.getId();
-        if(board[pos] != 0){
-            board[pos] = idPlayer;
+    public void setMove(int pos, int id){
+        board[pos] = id;
+    }
+    public int[] arrays(){
+        return board;
+    }
+    public void clear(){
+        for(int i= 0; i<9; i++ ){
+            board[i] = 0;
         }
     }
     

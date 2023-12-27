@@ -1,5 +1,8 @@
 package EDD_2.controllers;
 
+import EDD_2.models.Board;
+import EDD_2.models.Person;
+import EDD_2.models.Player;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,10 +49,27 @@ public class GameController implements Initializable {
     private int playerTurn = 0;
 
     ArrayList<Button> buttons;
+    
+    private Board board;
+    
+    private Player playerX;
+    
+    private Player playerCircle;
 
-
+    //nueva partida
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        //creacion de board
+        this.board = new Board();
+        
+        //creacion de jugadores
+        
+        Player playerX = new Person(1);
+        this.playerX = playerX;
+        
+        Player playerCircle = new Person(2);
+        this.playerCircle =  playerCircle;
+        
         buttons = new ArrayList<>(Arrays.asList(button1,button2,button3,button4,button5,button6,button7,button8,button9));
 
         buttons.forEach(button ->{
@@ -66,12 +86,14 @@ public class GameController implements Initializable {
 
     public void resetButton(Button button){
         button.setDisable(false);
+        board.clear();
         button.setText("");
     }
 
     private void setupButton(Button button) {
         button.setOnMouseClicked(mouseEvent -> {
             setPlayerSymbol(button);
+            
             button.setDisable(true);
             checkIfGameIsOver();
         });
@@ -79,56 +101,48 @@ public class GameController implements Initializable {
     
     public void setPlayerSymbol(Button button){
         if(playerTurn % 2 == 0){
+            
+            board.setMove(buttons.indexOf(button),playerX.getId());    
+
             button.setText("X"); //CAMBIAR POR BUTTON.SETGRAPHIC
+            
+            //for each para imprimir elemntos del array
+            for(int a: board.arrays()){
+                System.out.print(a);
+            }
+            System.out.println("");
             playerTurn = 1;
         } else{
+            
+            board.setMove(buttons.indexOf(button),playerCircle.getId());   
             button.setText("O"); //CAMBIAR POR BUTTON.SETGRAPHIC
+            for(int a: board.arrays()){
+                System.out.print(a);
+            }
+            System.out.println("");
             playerTurn = 0;
         }
     }
+   
 
     public void checkIfGameIsOver(){
-        for (int a = 0; a < 8; a++) {
-            String line;
-            switch (a) {
-                case 0: 
-                    line = button1.getText() + button2.getText() + button3.getText();
-                    break;
-                case 1: 
-                    line = button4.getText() + button5.getText() + button6.getText();
-                    break;
-                case 2:
-                    line = button7.getText() + button8.getText() + button9.getText();
-                    break;
-                case 3:
-                    line = button1.getText() + button5.getText() + button9.getText();
-                    break;
-                case 4:
-                    line = button3.getText() + button5.getText() + button7.getText();
-                    break;
-                case 5: 
-                    line = button1.getText() + button4.getText() + button7.getText();
-                    break;
-                case 6:
-                    line = button2.getText() + button5.getText() + button8.getText();
-                    break;
-                case 7: 
-                    line = button3.getText() + button6.getText() + button9.getText();
-                    break;
-                default:
-                    line = null;
-            }
+        if(board.isWinner(1)){
+            winnerText.setText("X WON!");
+            buttons.forEach(button ->{
+            button.setFocusTraversable(false);    
+            button.setDisable(true);
             
-            //CREAR METODO
-            //X winner
-            if (line.equals("XXX")) {
-                winnerText.setText("X won!");
-            }
-
-            //O winner
-            else if (line.equals("OOO")) {
-                winnerText.setText("O won!");
-            }
+        });
+            
+        }
+        if(board.isWinner(2)){
+            winnerText.setText("O WON!");
+            buttons.forEach(button ->{
+            button.setFocusTraversable(false);
+            button.setDisable(true);
+            
+        });
+            
         }
     }
 }
