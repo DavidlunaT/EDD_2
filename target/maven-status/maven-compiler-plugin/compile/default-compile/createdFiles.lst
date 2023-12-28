@@ -3,7 +3,6 @@ EDD_2\models\Computer.class
 EDD_2\models\MiniMax.class
 EDD_2\controllers\GameController.class
 EDD_2\models\Person.class
-EDD_2\controllers\TicTacToeController.class
 EDD_2\dataStructures\TreeNode.class
 module-info.class
 EDD_2\models\Player.class

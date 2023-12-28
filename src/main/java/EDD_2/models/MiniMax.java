@@ -48,4 +48,14 @@ public class MiniMax {
     public static void copyArray(int[] source, int[] destination) {
         System.arraycopy(source, 0, destination, 0, source.length);
     }
+    
+    
+    
+    public void setMin(){
+        //seteamos utilidades de los hijo del root con el valor minimo de cada hijo propio
+    }
+    
+    public Board searchMax(){
+        
+    }
 }

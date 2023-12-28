@@ -110,13 +110,16 @@ public class GameController implements Initializable {
             board.setMove(buttons.indexOf(button),playerX.getId());    
             button.setText("X"); //CAMBIAR POR BUTTON.SETGRAPHIC
             playerTurn = 1;
-            System.out.println(board.utility(playerX));
+            
+            
+            
         } else{
             
             board.setMove(buttons.indexOf(button),playerCircle.getId());   
             button.setText("O"); //CAMBIAR POR BUTTON.SETGRAPHIC
             playerTurn = 0;
-            System.out.println(board.utility(playerX));
+            
+            
         }
     }
    

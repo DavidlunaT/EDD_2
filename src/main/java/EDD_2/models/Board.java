@@ -9,6 +9,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Board {
+    private int utility;
     private int[] board ;
     private List<int[]> winnerPos = Arrays.asList(
                 new int[]{0, 1, 2},
@@ -24,11 +25,11 @@ public class Board {
     //nueva partida
     public Board(){
         board = new int[9]; 
+        
     }
-    
-    
     //cargar partida previa
     public Board(int[] boardLoaded){
+        
         board = boardLoaded;   
     }
     public int checkWinner (int id){
@@ -111,6 +112,10 @@ public class Board {
 
     public void setBoard(int[] board) {
         this.board = board;
+    }
+    
+    public void setUtility (Player player){
+        this.utility = utility(player);
     }
 
 }

@@ -11,18 +11,9 @@ public class Computer extends Player {
     
 
     private int id;
-
- 
-    public Tree<Board> IA;
-
     
     public Computer(int id){
         this.id = id;
-    }
-
-    
-    public void calculateBestMove(){
-        
     }
     
     @Override
@@ -30,7 +21,8 @@ public class Computer extends Player {
         return id;
     }
 
-    public void calculateBestMove(Board currentBoard){
+
+    public void calculateBestMove(){
         
     }
 
