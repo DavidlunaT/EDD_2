@@ -78,11 +78,8 @@ public class Board {
         int pX = 0;
         int pC = 0;
          ArrayList<Integer> xMovements = getMovesPlayer(1);
-         //0
          ArrayList<Integer> oMovements = getMovesPlayer(2);
-         //5
         for(int i = 0; i < 8; i++){
-           
             int n1 = winnerPos.get(i)[0];
             int n2 = winnerPos.get(i)[1];
             int n3 = winnerPos.get(i)[2];
@@ -92,16 +89,10 @@ public class Board {
             if(!xMovements.contains(n1)&&!xMovements.contains(n2)&&!xMovements.contains(n3)){
                 pC++;
             }
-            
         }if(id == 1){
-            System.out.println("Posibles moviemientos ganadores de X: " + pX);
-            System.out.println("Posibles moviemientos ganadores de O: " + pC);
             return pX - pC;
-        }else{
-            System.out.println("Posibles moviemientos ganadores de X: " + pX);
-            System.out.println("Posibles moviemientos ganadores de O: " + pC);
-            return pC - pX;
         }
+        return pC - pX;
     }
     
 

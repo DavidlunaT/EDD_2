@@ -52,10 +52,12 @@ public class MiniMax {
     
     
     public void setMin(){
-        //seteamos utilidades de los hijo del root con el valor minimo de cada hijo propio
+        //seteamos utilidades de los hijos del root con el valor minimo de cada hijo propio
     }
     
     public Board searchMax(){
-        
+        //retornamos el board con la mayor utilidad (de los hijos del root)
+        Board bestBoard = new Board();
+        return bestBoard;
     }
 }

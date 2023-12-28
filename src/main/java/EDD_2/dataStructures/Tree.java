@@ -16,7 +16,6 @@ public class Tree<E> {
     public Tree () {
         this.root = null; 
     }
-    
 
     public Tree(E content){
         this.root = new TreeNode<E>(content);
