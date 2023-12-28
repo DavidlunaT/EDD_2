@@ -10,12 +10,16 @@ package EDD_2.models;
  */
 public class Person extends Player {
     
-    public int id;
+   private int id;
     
-    
+   public Person(int id){
+       this.id = id;
+   }
    
-    @Override
-    public int getId() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+   @Override
+   public int getId(){
+       return id;
+   }
+       
+  
 }
