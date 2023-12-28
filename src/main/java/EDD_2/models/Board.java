@@ -77,5 +77,35 @@ public class Board {
             board[i] = 0;
         }
     }
+    public int utility(Player player){
+        int id = player.getId();
+        int pX = 0;
+        int pC = 0;
+         ArrayList<Integer> xMovements = getMovesPlayer(1);
+         //0
+         ArrayList<Integer> oMovements = getMovesPlayer(2);
+         //5
+        for(int i = 0; i < 8; i++){
+           
+            int n1 = winnerPos.get(i)[0];
+            int n2 = winnerPos.get(i)[1];
+            int n3 = winnerPos.get(i)[2];
+            if(!oMovements.contains(n1)&&!oMovements.contains(n2)&&!oMovements.contains(n3)){
+                pX++;
+            } 
+            if(!xMovements.contains(n1)&&!xMovements.contains(n2)&&!xMovements.contains(n3)){
+                pC++;
+            }
+            
+        }if(id == 1){
+            System.out.println("Posibles moviemientos ganadores de X: " + pX);
+            System.out.println("Posibles moviemientos ganadores de O: " + pC);
+            return pX - pC;
+        }else{
+            System.out.println("Posibles moviemientos ganadores de X: " + pX);
+            System.out.println("Posibles moviemientos ganadores de O: " + pC);
+            return pC - pX;
+        }
+    }
     
 }

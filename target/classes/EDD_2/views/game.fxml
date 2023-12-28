@@ -30,3 +30,4 @@
       </Text>
       <Button layoutX="274.0" layoutY="361.0" mnemonicParsing="false" onAction="#restartGame" text="Restart" />
    </children>
+</AnchorPane>
