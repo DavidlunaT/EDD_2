@@ -6,31 +6,45 @@ package EDD_2.models;
 
 import EDD_2.dataStructures.Tree;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author gabsy
  */
 public class MiniMax {
+
     private Board currentBoard;
-    
-    public MiniMax(Board actualGame){
+    private Tree<Board> treeGame;
+
+    public MiniMax(Board actualGame) {
         this.currentBoard = actualGame;
     }
-    
-    public void gameTree(){
-        Tree<Board> IA = new Tree<>(currentBoard);       
-        ArrayList<Tree<Board>> states = new ArrayList();
-        for(int i = 0; i<currentBoard.getBoard().length;i++){
-            if(currentBoard.getBoard()[i] !=0){
-                int[] arr2 = new int[9];
-                copyArray(currentBoard.getBoard(),arr2);
-                arr2[i] = 1; //playerid
-                states.add(new Tree(new Board(arr2)));
-            }
+
+    public void gameTree() {
+        Tree<Board> treeGame = new Tree<>(currentBoard);
+        List<Tree<Board>> states = createStates(1,currentBoard);
+        treeGame.getRootNode().setChildren(states);
+        for (Tree<Board> children : states) {
+            List<Tree<Board>> oponentStates = createStates(2,children.getRoot());
+            children.getRootNode().setChildren(oponentStates);
         }
     }
     
+
+    public List<Tree<Board>> createStates(int idPlayer, Board b) {
+        List<Tree<Board>> states = new ArrayList<>();
+        for (int i = 0; i < 9; i++) {
+            if (b.getBoard()[i] == 0) {
+                int[] arr2 = new int[9];
+                copyArray(b.getBoard(), arr2);
+                arr2[i] = 1; //playerid jugador (computadora)
+                states.add(new Tree(new Board(arr2)));
+            }
+        }
+        return states;
+    }
+
     public static void copyArray(int[] source, int[] destination) {
         System.arraycopy(source, 0, destination, 0, source.length);
     }
