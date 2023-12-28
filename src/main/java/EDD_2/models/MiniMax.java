@@ -38,7 +38,7 @@ public class MiniMax {
             if (b.getBoard()[i] == 0) {
                 int[] arr2 = new int[9];
                 copyArray(b.getBoard(), arr2);
-                arr2[i] = 1; //playerid jugador (computadora)
+                arr2[i] = idPlayer; //playerid jugador (computadora)
                 states.add(new Tree(new Board(arr2)));
             }
         }
