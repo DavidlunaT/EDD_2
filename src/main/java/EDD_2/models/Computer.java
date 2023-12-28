@@ -1,8 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package EDD_2.models;
+
+import EDD_2.dataStructures.Tree;
+import java.util.ArrayList;
 
 /**
  *
@@ -10,11 +9,17 @@ package EDD_2.models;
  */
 public class Computer extends Player {
     
+
     private int id;
+
+ 
+    public Tree<Board> IA;
+
     
     public Computer(int id){
         this.id = id;
     }
+
     
     public void calculateBestMove(){
         
@@ -24,4 +29,10 @@ public class Computer extends Player {
     public int getId(){
         return id;
     }
+
+    public void calculateBestMove(Board currentBoard){
+        
+    }
+
+
 }

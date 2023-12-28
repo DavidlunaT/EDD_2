@@ -12,8 +12,5 @@ public class Partida {
     private Player playerX;
     private Player playerCicle;
     private boolean isXTurn;
-    private Board CurrentTablero;
-    
-    
-    
+    private Board CurrentTablero;  
 }
