@@ -50,11 +50,13 @@ public class GameController implements Initializable {
 
     ArrayList<Button> buttons;
     
+
     private Board board;
     
     private Player playerX;
     
     private Player playerCircle;
+
 
     //nueva partida
     @Override
@@ -93,7 +95,10 @@ public class GameController implements Initializable {
     private void setupButton(Button button) {
         button.setOnMouseClicked(mouseEvent -> {
             setPlayerSymbol(button);
-            
+
+            int pos = buttons.indexOf(button);
+            System.out.println(pos);
+
             button.setDisable(true);
             checkIfGameIsOver();
         });
@@ -132,8 +137,7 @@ public class GameController implements Initializable {
             button.setFocusTraversable(false);
             button.setDisable(true);
             
-        });
-            
+            });
         }
     }
 }

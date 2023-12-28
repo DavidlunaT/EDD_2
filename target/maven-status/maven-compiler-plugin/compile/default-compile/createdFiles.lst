@@ -1,5 +1,6 @@
 EDD_2\models\Board.class
 EDD_2\models\Computer.class
+EDD_2\models\MiniMax.class
 EDD_2\controllers\GameController.class
 EDD_2\models\Person.class
 EDD_2\controllers\TicTacToeController.class
