@@ -133,24 +133,24 @@ public class GamePvCController implements Initializable {
     }
    
 
-    public void checkIfGameIsOver(){
-        if(board.isWinner(1)){
-            winnerText.setText("X WON!");
-            buttons.forEach(button ->{
+    public void checkIfGameIsOver(){       
+          int winner = board.whoIsWinner(board.x, board.o);         
+          if(winner == board.x)
+             {winnerText.setText("X WON!");
+              disableButtons();}
+          else if(winner == board.o)
+             {winnerText.setText("O WON!");
+              disableButtons();}
+          else if(winner == -1)
+             {winnerText.setText("TIE");
+              disableButtons();}
+    }
+
+    private void disableButtons() {
+        buttons.forEach(button ->{
             button.setFocusTraversable(false);    
             button.setDisable(true);
-            
         });
-            
-        }
-        if(board.isWinner(2)){
-            winnerText.setText("O WON!");
-            buttons.forEach(button ->{
-            button.setFocusTraversable(false);
-            button.setDisable(true);
-            
-            });
-        }
     }
 }
 
