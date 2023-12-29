@@ -25,7 +25,7 @@ public class MiniMax {
     }
 
     public void gameTree() {
-        Tree<Board> treeGame = new Tree<>(currentBoard);
+        treeGame = new Tree<>(currentBoard);
         List<Tree<Board>> states = createStates(1, currentBoard);
         treeGame.getRootNode().setChildren(states);
         for (Tree<Board> children : states) {
@@ -50,7 +50,8 @@ public class MiniMax {
     public static void copyArray(int[] source, int[] destination) {
         System.arraycopy(source, 0, destination, 0, source.length);
     }
-
+    
+    //calcula la utilidad a todas las hojas y setea la minima al padre. 
     public void setMin(){       
         List<Tree<Board>> rootChildren = treeGame.getRootNode().getChildren();
         for(Tree<Board> rootChild : rootChildren){
@@ -69,7 +70,8 @@ public class MiniMax {
         }      
         return utilities;
     }
-
+    
+    //saca el max de las utilidades de los hijos del root
     public Board searchMax() {
         List<Tree<Board>> rootTreeGame = treeGame.getRootNode().getChildren();
         for (Tree<Board> tb : rootTreeGame) {
@@ -90,4 +92,9 @@ public class MiniMax {
         }
         return maxUtility;
     }
+
+    public void setCurrentBoard(Board currentBoard) {
+        this.currentBoard = currentBoard;
+    }
+
 }

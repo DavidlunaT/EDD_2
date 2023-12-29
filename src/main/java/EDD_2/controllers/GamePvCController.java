@@ -132,7 +132,6 @@ public class GamePvCController implements Initializable {
         }
     }
    
-
     public void checkIfGameIsOver(){       
           int winner = board.whoIsWinner(board.x, board.o);         
           if(winner == board.x)
