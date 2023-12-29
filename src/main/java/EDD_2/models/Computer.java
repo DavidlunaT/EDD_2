@@ -13,7 +13,7 @@ public class Computer extends Player {
     
     public Computer(int id, Board b){
         this.id = id;
-        this.minimax = new MiniMax(b);
+        this.minimax = new MiniMax(b,this);
     }
     
     @Override
@@ -21,9 +21,9 @@ public class Computer extends Player {
         return id;
     }
  
-    public int calculateBestMove(Board b){
+    public int calculateBestMove(Board b, int idTurn, int idOponent){
         minimax.setCurrentBoard(b);
-        minimax.initializeUtility();
+        minimax.initializeUtility(idTurn,idOponent);
         return minimax.searchMaxMove();
 
 

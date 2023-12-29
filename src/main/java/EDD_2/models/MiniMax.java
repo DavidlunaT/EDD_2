@@ -15,17 +15,19 @@ import java.util.List;
  * @author gabsy
  */
 public class MiniMax {
-
+    private Player playerTurn;
     private Board currentBoard;
     private Tree<Board> treeGame;    
     private int size = 9;
+    private int id;
 
-    public MiniMax(Board actualGame) {
+    public MiniMax(Board actualGame, Player p) {
         this.currentBoard = actualGame;
+        this.playerTurn = p;
     }
     
-    public void initializeUtility(){
-        gameTree(currentBoard.o,currentBoard.x); //Crear el arbol y lo llena los 2 niveles
+    public void initializeUtility(int idTurn, int idOponent){
+        gameTree(idTurn,idOponent); //Crear el arbol y lo llena los 2 niveles
         setMin(); //Setea la utilidad de los boards hijos
     }
 
@@ -70,7 +72,7 @@ public class MiniMax {
     public List<Integer> childrenUtilities(List<Tree<Board>> children){
         List<Integer> utilities = new ArrayList<>();
         for(Tree<Board> c : children){
-            int utility = c.getRoot().getUtility();
+            int utility = c.getRoot().utility(playerTurn);
             utilities.add(utility);
         }      
         return utilities;
