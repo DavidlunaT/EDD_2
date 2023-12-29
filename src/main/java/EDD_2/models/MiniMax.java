@@ -83,6 +83,16 @@ public class MiniMax {
         return null;
     }
     
+    public int searchMaxMove() {
+        Board b = searchMax();
+        for(int i = 0; i<b.getBoard().length;i++){
+            if(currentBoard.getBoard()[i] != b.getBoard()[i]){
+                return i;
+            }
+        }
+        return -1;
+    }
+    
     public int maxUtility(){
         List<Tree<Board>> rootTreeGame = treeGame.getRootNode().getChildren();
         int maxUtility = Integer.MIN_VALUE;
