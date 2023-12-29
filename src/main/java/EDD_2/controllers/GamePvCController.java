@@ -145,6 +145,9 @@ public class GamePvCController implements Initializable {
             //visualizar el board
             for(int i = 0; i < 9; i++){
                 System.out.print(board.getBoard()[i]);
+                if(i==2 || i==5 || i == 8){
+                    System.out.println("");
+                }
             }
             System.out.println("");
             
