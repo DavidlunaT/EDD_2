@@ -9,6 +9,7 @@ import EDD_2.models.Board;
 import EDD_2.models.Computer;
 import EDD_2.models.Person;
 import EDD_2.models.Player;
+import static java.lang.Thread.sleep;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -55,8 +56,6 @@ public class GamePvCController implements Initializable {
     @FXML
     private Text winnerText;
 
-    private int playerTurn = 0;
-
     ArrayList<Button> buttons;
     
 
@@ -102,7 +101,7 @@ public class GamePvCController implements Initializable {
             setupButton(button);
             button.setFocusTraversable(false);
         });
-        
+        firstMove();
     }
 
     @FXML
@@ -110,7 +109,8 @@ public class GamePvCController implements Initializable {
         buttons.forEach(this::resetButton);
         winnerText.setText("Tic-Tac-Toe");
     }
-
+    
+    //
     public void resetButton(Button button){
         button.setDisable(false);
         board.clear();
@@ -119,50 +119,74 @@ public class GamePvCController implements Initializable {
 
     private void setupButton(Button button) {
         button.setOnMouseClicked(mouseEvent -> {
-            //setPlayerSymbol(button);
-
-            int pos = buttons.indexOf(button);
-            System.out.println(pos);
-
+            //Setea movimiento de player
+            if(App.isX){
+                button.setText("X");
+            }else{
+                button.setText("O");
+            }
+            board.setMove(buttons.indexOf(button),player.getId());
+            
             button.setDisable(true);
+            try {
+                //luego setea movimiento de Pc
+                Thread.sleep(1000);
+            } catch (InterruptedException ex) {
+                ex.printStackTrace();
+            }
+            checkIfGameIsOver();
+            winnerText.setText("...");
+            computerMove();
+            winnerText.setText("Your Turn");
             checkIfGameIsOver();
         });
     }
-    public void computerMovesManager(){
-       while(!gameOver){
-           if(!App.playerTurn){
-               //movimiento de Pc
-               int posicionOptima = computer.calculateBestMove(board);
-               board.setMove( posicionOptima , computer.getId());
-               Button SelectedButton = buttons.get(computer.calculateBestMove(board));
-               if(!App.isX){
-                   SelectedButton.setText("X"); 
-                   SelectedButton.setDisable(true);
-                   
-               }else{
-                   SelectedButton.setText("O"); 
-                   SelectedButton.setDisable(true);
-               } 
-               checkIfGameIsOver();
-           }
-           
-           
-       }
+    public void firstMove(){
+        if(!App.playerTurn){
+             //computer turn
+             winnerText.setText("...");
+             computerMove();
+             App.playerTurn = true;
+             winnerText.setText("Your Turn");
+         }
     }
+    
+    //Computadora ejecuta su movimiento
+    public void computerMove(){
+      
+        //movimiento de Pc
+        int posicionOptima = computer.calculateBestMove(board);
+        board.setMove( posicionOptima , computer.getId());
+        Button SelectedButton = buttons.get(posicionOptima);
+        if(App.isX){
+            SelectedButton.setText("O"); 
+            SelectedButton.setDisable(true);
 
+        }else{
+            SelectedButton.setText("X"); 
+            SelectedButton.setDisable(true);
+            } 
+        
+          
+    }
+    //checkea si es game se acabo
     public void checkIfGameIsOver(){       
           int winner = board.whoIsWinner(board.x, board.o);         
           if(winner == board.x)
-             {winnerText.setText("X WON!");
-              disableButtons();}
+                {winnerText.setText("X WON!");
+                disableButtons();
+                gameOver = true;}
           else if(winner == board.o)
-             {winnerText.setText("O WON!");
-              disableButtons();}
+                {winnerText.setText("O WON!");
+                disableButtons();
+                gameOver = true;}
           else if(winner == -1)
-             {winnerText.setText("TIE");
-              disableButtons();}
+                {winnerText.setText("TIE");
+                disableButtons();
+                gameOver = true;}
     }
 
+    //desabilita todo los botones
     private void disableButtons() {
         buttons.forEach(button ->{
             button.setFocusTraversable(false);    

@@ -23,7 +23,7 @@ public class Computer extends Player {
  
     public int calculateBestMove(Board b){
         minimax.setCurrentBoard(b);
-
+        minimax.initializeUtility();
         return minimax.searchMaxMove();
 
 

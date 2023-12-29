@@ -21,15 +21,20 @@ public class MiniMax {
     private int size = 9;
 
     public MiniMax(Board actualGame) {
-        this.currentBoard = actualGame;        
+        this.currentBoard = actualGame;
+    }
+    
+    public void initializeUtility(){
+        gameTree(currentBoard.o,currentBoard.x); //Crear el arbol y lo llena los 2 niveles
+        setMin(); //Setea la utilidad de los boards hijos
     }
 
-    public void gameTree() {
+    public void gameTree(int idTurn, int idOponent) {
         treeGame = new Tree<>(currentBoard);
-        List<Tree<Board>> states = createStates(1, currentBoard);
+        List<Tree<Board>> states = createStates(idTurn, currentBoard);
         treeGame.getRootNode().setChildren(states);
         for (Tree<Board> children : states) {
-            List<Tree<Board>> oponentStates = createStates(2, children.getRoot());
+            List<Tree<Board>> oponentStates = createStates(idOponent, children.getRoot());
             children.getRootNode().setChildren(oponentStates);
         }
     }
