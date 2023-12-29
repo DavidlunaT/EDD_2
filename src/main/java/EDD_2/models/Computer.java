@@ -13,7 +13,7 @@ public class Computer extends Player {
     
     public Computer(int id, Board b){
         this.id = id;
-        this.minimax = new MiniMax(b);
+        this.minimax = new MiniMax(b,this);
     }
     
     @Override
