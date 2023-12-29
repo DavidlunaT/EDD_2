@@ -1,13 +1,14 @@
-D:\EDD_2\src\main\java\EDD_2\dataStructures\Tree.java
-D:\EDD_2\src\main\java\EDD_2\models\Board.java
-D:\EDD_2\src\main\java\EDD_2\dataStructures\TreeNode.java
-D:\EDD_2\src\main\java\EDD_2\models\MiniMax.java
-D:\EDD_2\src\main\java\module-info.java
-D:\EDD_2\src\main\java\EDD_2\controllers\SelectingController.java
-D:\EDD_2\src\main\java\EDD_2\App.java
-D:\EDD_2\src\main\java\EDD_2\models\Partida.java
-D:\EDD_2\src\main\java\EDD_2\models\Person.java
-D:\EDD_2\src\main\java\EDD_2\controllers\GamePvCController.java
-D:\EDD_2\src\main\java\EDD_2\models\Computer.java
-D:\EDD_2\src\main\java\EDD_2\controllers\GameController.java
-D:\EDD_2\src\main\java\EDD_2\models\Player.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\controllers\GamePvCController.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\controllers\SelectingController.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\dataStructures\TreeNode.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\module-info.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\models\Computer.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\models\Board.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\controllers\GameController.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\models\MiniMax.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\models\Person.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\App.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\models\Player.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\controllers\LauncherController.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\models\Partida.java
+C:\Users\oweny\OneDrive\Documentos\Codes\Estructura de datos\EDD_2\src\main\java\EDD_2\dataStructures\Tree.java
