@@ -165,7 +165,7 @@ public class GamePvCController implements Initializable {
     public void computerMove(){
       
         //movimiento de Pc
-        int posicionOptima = computer.calculateBestMove(board);
+        int posicionOptima = computer.calculateBestMove(board,computer.getId(),player.getId());
         board.setMove( posicionOptima , computer.getId());
         Button SelectedButton = buttons.get(posicionOptima);
         if(App.isX){
