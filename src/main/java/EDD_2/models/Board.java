@@ -11,6 +11,10 @@ import java.util.List;
 public class Board {
     private int utility;
     private int[] board ;
+    public int size = 9;
+    public int x = 1;
+    public int o = 2;
+    
     private List<int[]> winnerPos = Arrays.asList(
                 new int[]{0, 1, 2},
                 new int[]{0, 3, 6},
@@ -32,43 +36,42 @@ public class Board {
         
         board = boardLoaded;   
     }
-    public int checkWinner (int id){
-        if(isWinner(id)){
-            return id;
-        }
-        return 0;
-    }
-    public boolean isWinner(int id){
-        ArrayList<Integer> list = getMovesPlayer(id);
+    
+    public int whoIsWinner(int idX, int idO){        
+        ArrayList<Integer> listX = getMovesPlayer(idX);
+        ArrayList<Integer> list0 = getMovesPlayer(idO);
+        
         for(int i = 0; i < 8; i++){
             int n1 = winnerPos.get(i)[0];
             int n2 = winnerPos.get(i)[1];
-            int n3 = winnerPos.get(i)[2];
-            if(list.contains(n1) && list.contains(n2) && list.contains(n3)){
-                return true;
-            }
+            int n3 = winnerPos.get(i)[2];           
+            boolean isXwinner = listX.contains(n1) && listX.contains(n2) && listX.contains(n3);
+            boolean isOwinner = list0.contains(n1) && list0.contains(n2) && list0.contains(n3);  
+            boolean isTie = isFull() && (!isXwinner) && (!isOwinner);
+            if(isXwinner){return idX;} 
+            else if(isOwinner){return idO;}
+            else if(isTie){return -1;}
         }
-        return false;       
-        
+        return 0;
     }
+    
     private ArrayList<Integer> getMovesPlayer(int id){
-        ArrayList<Integer> list = new ArrayList<>();
-        
-        int idPlayer = id;
-        
-        for(int i = 0; i<9 ; i++){
+        ArrayList<Integer> list = new ArrayList<>();        
+        int idPlayer = id;       
+        for(int i = 0; i<size; i++){
             if(idPlayer == board[i]){
                 list.add(i);
             }
         }
         return list;
     }
+    
     public void setMove(int pos, int id){
         board[pos] = id;
     }
    
     public void clear(){
-        for(int i= 0; i<9; i++ ){
+        for(int i= 0; i<size; i++ ){
             board[i] = 0;
         }
     }
@@ -117,5 +120,14 @@ public class Board {
     public void setUtility(int utility){
         this.utility = utility;
     }
-
+    
+    public boolean isFull(){
+        int cont = 0;
+        for(int i: board){
+            if(i != 0){
+                cont++;
+            }
+        }
+        return cont == size;
+    }
 }

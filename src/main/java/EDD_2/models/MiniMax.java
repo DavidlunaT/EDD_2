@@ -18,6 +18,7 @@ public class MiniMax {
 
     private Board currentBoard;
     private Tree<Board> treeGame;    
+    private int size = 9;
 
     public MiniMax(Board actualGame) {
         this.currentBoard = actualGame;        
@@ -35,24 +36,21 @@ public class MiniMax {
 
     public List<Tree<Board>> createStates(int idPlayer, Board b) {
         List<Tree<Board>> states = new ArrayList<>();
-        for (int i = 0; i < 9; i++) {
+        for(int i = 0; i < size; i++){
             if (b.getBoard()[i] == 0) {
-                int[] arr2 = new int[9];
-                copyArray(b.getBoard(), arr2);
-                arr2[i] = idPlayer; //playerid jugador (computadora)
-                states.add(new Tree(new Board(arr2)));
+                int[] arr = new int[size];
+                copyArray(b.getBoard(), arr);
+                arr[i] = idPlayer; 
+                states.add(new Tree(new Board(arr)));
             }
         }
         return states;
     }
-
+    
     public static void copyArray(int[] source, int[] destination) {
         System.arraycopy(source, 0, destination, 0, source.length);
     }
 
-    
-    
-    
     public void setMin(){       
         List<Tree<Board>> rootChildren = treeGame.getRootNode().getChildren();
         for(Tree<Board> rootChild : rootChildren){
