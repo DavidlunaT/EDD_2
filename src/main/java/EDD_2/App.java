@@ -14,7 +14,8 @@ import java.io.IOException;
 public class App extends Application {
 
     private static Scene scene;
-
+    public static String path = "src/main/resources/";
+            
     @Override
     public void start(Stage stage) throws IOException {
         scene = new Scene(loadFXML("selecting"), 640, 480);
@@ -33,6 +34,9 @@ public class App extends Application {
 
     public static void main(String[] args) {
         launch();
+    }
+    public static void changeRoot(Parent rootNode) {
+        scene.setRoot(rootNode);
     }
 
 }

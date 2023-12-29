@@ -4,6 +4,8 @@
  */
 package EDD_2.controllers;
 
+import EDD_2.App;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -33,11 +35,21 @@ public class SelectingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        xRadioBtn.setSelected(true);
+        iniciarRadioBtn.setSelected(true);
     }
 
     public void confirmSelected(ActionEvent actionEvent) {
+        if(xRadioBtn.isSelected()){
+            if(iniciarRadioBtn.isSelected()){
+                try {App.setRoot("gamePvC");} catch (IOException ex) {}    
+            }
+            
+        }
+        
     }
 
     public void cancelRadioBtn(ActionEvent actionEvent) {
+        
     }
 }
