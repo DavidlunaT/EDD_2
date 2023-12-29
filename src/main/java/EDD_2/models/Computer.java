@@ -20,12 +20,10 @@ public class Computer extends Player {
     public int getId(){
         return id;
     }
-
-    
+ 
     public int calculateBestMove(Board b){
         minimax.setCurrentBoard(b);
-        //int pos = minimax.searchMax();
-        return 1;
+        return minimax.searchMaxMove();
     }
 
 
