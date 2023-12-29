@@ -116,9 +116,8 @@ public class GameController implements Initializable {
     }
    
 
-    public void checkIfGameIsOver(){
-          int winner = board.whoIsWinner(board.x, board.o);
-          
+    public void checkIfGameIsOver(){       
+          int winner = board.whoIsWinner(board.x, board.o);         
           if(winner == board.x)
              {winnerText.setText("X WON!");
               disableButtons();}
@@ -135,31 +134,6 @@ public class GameController implements Initializable {
             button.setFocusTraversable(false);    
             button.setDisable(true);
         });
-<<<<<<< HEAD
-            
-        }
-        if(board.isWinner(2)){
-            winnerText.setText("O WON!");
-            buttons.forEach(button ->{
-            button.setFocusTraversable(false);
-            button.setDisable(true);
-            
-            });
-        }
-        boolean isGameOver = true;
-        for(int i = 0; i < 9 ; i++){
-            
-            if (board.getBoard()[i] != 0 ){
-                isGameOver = false;
-                
-            } 
-        }
-        if(isGameOver){
-            winnerText.setText("Draw :C!");
-            
-        }
-        
-=======
->>>>>>> 1b3568c5f5091166cafcca06a0f2ec07bf0dff10
+
     }
 }

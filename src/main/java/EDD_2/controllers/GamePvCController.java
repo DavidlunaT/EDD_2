@@ -149,43 +149,25 @@ public class GamePvCController implements Initializable {
            
        }
     }
-   
+    public void checkIfGameIsOver(){       
+          int winner = board.whoIsWinner(board.x, board.o);         
+          if(winner == board.x)
+             {winnerText.setText("X WON!");
+              disableButtons();}
+          else if(winner == board.o)
+             {winnerText.setText("O WON!");
+              disableButtons();}
+          else if(winner == -1)
+             {winnerText.setText("TIE");
+              disableButtons();}
+    }
 
-    public void checkIfGameIsOver(){
-        //verifico si X es ganador
-        if(board.isWinner(1)){
-            winnerText.setText("X WON!");
-            buttons.forEach(button ->{
+    private void disableButtons() {
+        buttons.forEach(button ->{
             button.setFocusTraversable(false);    
             button.setDisable(true);
-            gameOver = true;
         });
-            
-        }
-        //verifico si O es ganador
-        if(board.isWinner(2)){
-            winnerText.setText("O WON!");
-            buttons.forEach(button ->{
-            button.setFocusTraversable(false);
-            button.setDisable(true);
-            gameOver = true;
-            });
-        }
-        //verifico Empate
-        boolean isGameOver = true;
-        for(int i = 0; i < 9 ; i++){
-            
-            if (board.getBoard()[i] == 0 ){
-                isGameOver = false;
-                
-            } 
-        }
-        if(isGameOver){
-            winnerText.setText("Draw :C!");
-            gameOver = isGameOver;
-        }
-        
-        
+
     }
 }
 
