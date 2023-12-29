@@ -84,14 +84,14 @@ public class GamePvCController implements Initializable {
             Person playerX = new Person(1);
             this.player = playerX;
             
-            Computer playerCircle = new Computer(2);
+            Computer playerCircle = new Computer(2,board);
             this.computer =  playerCircle;
         }
         else{
             Person playerCircle = new Person(2);
             this.player = playerCircle;
             
-            Computer playerX = new Computer(1);
+            Computer playerX = new Computer(1,board);
             this.computer =  playerX;
         }
         
@@ -132,9 +132,9 @@ public class GamePvCController implements Initializable {
        while(!gameOver){
            if(!App.playerTurn){
                //movimiento de Pc
-               int posicionOptima = computer.getMove(board);
+               int posicionOptima = computer.calculateBestMove(board);
                board.setMove( posicionOptima , computer.getId());
-               Button SelectedButton = buttons.get(computer.getMove(board));
+               Button SelectedButton = buttons.get(computer.calculateBestMove(board));
                if(!App.isX){
                    SelectedButton.setText("X"); 
                    SelectedButton.setDisable(true);
@@ -149,6 +149,7 @@ public class GamePvCController implements Initializable {
            
        }
     }
+
     public void checkIfGameIsOver(){       
           int winner = board.whoIsWinner(board.x, board.o);         
           if(winner == board.x)
