@@ -53,7 +53,7 @@ public class SelectingController implements Initializable {
         if(iniciarRadioBtn.isSelected()){
                 App.isX = false;
                 App.playerTurn = true;
-                try {App.setRoot("gameP PvC");} catch (IOException ex) {}
+                try {App.setRoot("gamePvC");} catch (IOException ex) {}
         }
         
         App.isX = false;
