@@ -101,7 +101,9 @@ public class GamePvCController implements Initializable {
             setupButton(button);
             button.setFocusTraversable(false);
         });
+        System.out.println("initializer");
         firstMove();
+        winnerText.setText("Your Turn");
     }
 
     @FXML
@@ -115,6 +117,7 @@ public class GamePvCController implements Initializable {
         button.setDisable(false);
         board.clear();
         button.setText("");
+        firstMove();
     }
 
     private void setupButton(Button button) {
@@ -128,26 +131,33 @@ public class GamePvCController implements Initializable {
             board.setMove(buttons.indexOf(button),player.getId());
             
             button.setDisable(true);
-            try {
-                //luego setea movimiento de Pc
-                Thread.sleep(1000);
-            } catch (InterruptedException ex) {
-                ex.printStackTrace();
-            }
+//            try {
+//                //luego setea movimiento de Pc
+//                Thread.sleep(1000);
+//            } catch (InterruptedException ex) {
+//                ex.printStackTrace();
+//            }
             checkIfGameIsOver();
             winnerText.setText("...");
             computerMove();
             winnerText.setText("Your Turn");
             checkIfGameIsOver();
+            //visualizar el board
+            for(int i = 0; i < 9; i++){
+                System.out.print(board.getBoard()[i]);
+            }
+            System.out.println("");
+            
         });
     }
     public void firstMove(){
+        
         if(!App.playerTurn){
              //computer turn
              winnerText.setText("...");
              computerMove();
-             App.playerTurn = true;
              winnerText.setText("Your Turn");
+             
          }
     }
     
