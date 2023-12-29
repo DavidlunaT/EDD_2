@@ -19,6 +19,7 @@ public class MiniMax {
     private Board currentBoard;
     private Tree<Board> treeGame;    
     private int size = 9;
+    private int id;
 
     public MiniMax(Board actualGame) {
         this.currentBoard = actualGame;
@@ -70,7 +71,7 @@ public class MiniMax {
     public List<Integer> childrenUtilities(List<Tree<Board>> children){
         List<Integer> utilities = new ArrayList<>();
         for(Tree<Board> c : children){
-            int utility = c.getRoot().getUtility();
+            int utility = c.getRoot().utility();
             utilities.add(utility);
         }      
         return utilities;
