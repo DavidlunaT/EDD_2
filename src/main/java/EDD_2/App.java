@@ -20,7 +20,11 @@ public class App extends Application {
             
     @Override
     public void start(Stage stage) throws IOException {
+<<<<<<< HEAD
         scene = new Scene(loadFXML("game"), 640, 480);
+=======
+        scene = new Scene(loadFXML("launcher"), 640, 480);
+>>>>>>> 1b3568c5f5091166cafcca06a0f2ec07bf0dff10
         stage.setScene(scene);
         stage.show();
     }
@@ -37,6 +41,7 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
+    
     public static void changeRoot(Parent rootNode) {
         scene.setRoot(rootNode);
     }

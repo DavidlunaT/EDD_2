@@ -95,7 +95,6 @@ public class GameController implements Initializable {
     private void setupButton(Button button) {
         button.setOnMouseClicked(mouseEvent -> {
             setPlayerSymbol(button);
-
             int pos = buttons.indexOf(button);
             System.out.println(pos);
 
@@ -105,33 +104,38 @@ public class GameController implements Initializable {
     }
     
     public void setPlayerSymbol(Button button){
-        if(playerTurn % 2 == 0){
-            
+        if(playerTurn % 2 == 0){            
             board.setMove(buttons.indexOf(button),playerX.getId());    
             button.setText("X"); //CAMBIAR POR BUTTON.SETGRAPHIC
             playerTurn = 1;
-            
-            
-            
-        } else{
-            
+        } else{         
             board.setMove(buttons.indexOf(button),playerCircle.getId());   
             button.setText("O"); //CAMBIAR POR BUTTON.SETGRAPHIC
             playerTurn = 0;
-            
-            
         }
     }
    
 
     public void checkIfGameIsOver(){
-        if(board.isWinner(1)){
-            winnerText.setText("X WON!");
-            buttons.forEach(button ->{
+          int winner = board.whoIsWinner(board.x, board.o);
+          
+          if(winner == board.x)
+             {winnerText.setText("X WON!");
+              disableButtons();}
+          else if(winner == board.o)
+             {winnerText.setText("O WON!");
+              disableButtons();}
+          else if(winner == -1)
+             {winnerText.setText("TIE");
+              disableButtons();}
+    }
+
+    private void disableButtons() {
+        buttons.forEach(button ->{
             button.setFocusTraversable(false);    
             button.setDisable(true);
-            
         });
+<<<<<<< HEAD
             
         }
         if(board.isWinner(2)){
@@ -155,5 +159,7 @@ public class GameController implements Initializable {
             
         }
         
+=======
+>>>>>>> 1b3568c5f5091166cafcca06a0f2ec07bf0dff10
     }
 }
