@@ -6,6 +6,7 @@ package EDD_2.models;
 
 import EDD_2.dataStructures.Tree;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -15,10 +16,10 @@ import java.util.List;
 public class MiniMax {
 
     private Board currentBoard;
-    private Tree<Board> treeGame;
+    private Tree<Board> treeGame;    
 
     public MiniMax(Board actualGame) {
-        this.currentBoard = actualGame;
+        this.currentBoard = actualGame;        
     }
 
     public void gameTree() {
@@ -51,8 +52,23 @@ public class MiniMax {
     
     
     
-    public void setMin(){
-        //seteamos utilidades de los hijos del root con el valor minimo de cada hijo propio
+    public void setMin(){       
+        List<Tree<Board>> rootChildren = treeGame.getRootNode().getChildren();
+        for(Tree<Board> rootChild : rootChildren){
+            List<Tree<Board>> childChildren = rootChild.getRootNode().getChildren();
+            List<Integer> utilities = childrenUtilities(childChildren);
+            int min = Collections.min(utilities);     
+            rootChild.getRoot().setUtility(min);
+        }
+    }
+    
+    public List<Integer> childrenUtilities(List<Tree<Board>> children){
+        List<Integer> utilities = new ArrayList<>();
+        for(Tree<Board> c : children){
+            int utility = c.getRoot().getUtility();
+            utilities.add(utility);
+        }      
+        return utilities;
     }
     
     public Board searchMax(){

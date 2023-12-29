@@ -100,6 +100,10 @@ public class Board {
         return board;
     }
 
+    public int getUtility() {
+        return utility;
+    }
+
 
     public void setBoard(int[] board) {
         this.board = board;
@@ -108,5 +112,8 @@ public class Board {
     public void setUtility (Player player){
         this.utility = utility(player);
     }
-
+    
+    public void setUtility(int utility){
+        this.utility = utility;
+    }
 }
