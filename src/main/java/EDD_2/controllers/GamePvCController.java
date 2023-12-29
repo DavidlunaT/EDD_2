@@ -4,7 +4,9 @@
  */
 package EDD_2.controllers;
 
+import EDD_2.App;
 import EDD_2.models.Board;
+import EDD_2.models.Computer;
 import EDD_2.models.Person;
 import EDD_2.models.Player;
 import java.net.URL;
@@ -60,9 +62,11 @@ public class GamePvCController implements Initializable {
 
     private Board board;
     
-    private Player playerX;
+    private Person player;
     
-    private Player playerCircle;
+    private Computer computer;
+    
+    private boolean gameOver;
     /**
      * Initializes the controller class.
      */
@@ -73,20 +77,32 @@ public class GamePvCController implements Initializable {
         //creacion de board
         this.board = new Board();
         
-        //creacion de jugadores
+        //creacion de jugadores 
+        //id = 1 es X
+        //id = 2 es O
+        if(App.isX){
+            Person playerX = new Person(1);
+            this.player = playerX;
+            
+            Computer playerCircle = new Computer(2,board);
+            this.computer =  playerCircle;
+        }
+        else{
+            Person playerCircle = new Person(2);
+            this.player = playerCircle;
+            
+            Computer playerX = new Computer(1,board);
+            this.computer =  playerX;
+        }
         
-        Player playerX = new Person(1);
-        this.playerX = playerX;
-        
-        Player playerCircle = new Person(2);
-        this.playerCircle =  playerCircle;
         
         buttons = new ArrayList<>(Arrays.asList(button1,button2,button3,button4,button5,button6,button7,button8,button9));
-
+        
         buttons.forEach(button ->{
             setupButton(button);
             button.setFocusTraversable(false);
         });
+        
     }
 
     @FXML
@@ -103,7 +119,7 @@ public class GamePvCController implements Initializable {
 
     private void setupButton(Button button) {
         button.setOnMouseClicked(mouseEvent -> {
-            setPlayerSymbol(button);
+            //setPlayerSymbol(button);
 
             int pos = buttons.indexOf(button);
             System.out.println(pos);
@@ -112,26 +128,28 @@ public class GamePvCController implements Initializable {
             checkIfGameIsOver();
         });
     }
-    
-    public void setPlayerSymbol(Button button){
-        if(playerTurn % 2 == 0){
-            
-            board.setMove(buttons.indexOf(button),playerX.getId());    
-            button.setText("X"); //CAMBIAR POR BUTTON.SETGRAPHIC
-            playerTurn = 1;
-            
-            
-            
-        } else{
-            
-            board.setMove(buttons.indexOf(button),playerCircle.getId());   
-            button.setText("O"); //CAMBIAR POR BUTTON.SETGRAPHIC
-            playerTurn = 0;
-            
-            
-        }
+    public void computerMovesManager(){
+       while(!gameOver){
+           if(!App.playerTurn){
+               //movimiento de Pc
+               int posicionOptima = computer.calculateBestMove(board);
+               board.setMove( posicionOptima , computer.getId());
+               Button SelectedButton = buttons.get(computer.calculateBestMove(board));
+               if(!App.isX){
+                   SelectedButton.setText("X"); 
+                   SelectedButton.setDisable(true);
+                   
+               }else{
+                   SelectedButton.setText("O"); 
+                   SelectedButton.setDisable(true);
+               } 
+               checkIfGameIsOver();
+           }
+           
+           
+       }
     }
-   
+
     public void checkIfGameIsOver(){       
           int winner = board.whoIsWinner(board.x, board.o);         
           if(winner == board.x)
@@ -150,6 +168,7 @@ public class GamePvCController implements Initializable {
             button.setFocusTraversable(false);    
             button.setDisable(true);
         });
+
     }
 }
 

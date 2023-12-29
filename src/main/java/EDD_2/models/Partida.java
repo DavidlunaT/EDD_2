@@ -9,6 +9,7 @@ package EDD_2.models;
  * @author David
  */
 public class Partida {
+    
     private Player playerX;
     private Player playerCicle;
     private boolean isXTurn;

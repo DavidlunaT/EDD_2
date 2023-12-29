@@ -134,5 +134,6 @@ public class GameController implements Initializable {
             button.setFocusTraversable(false);    
             button.setDisable(true);
         });
+
     }
 }
