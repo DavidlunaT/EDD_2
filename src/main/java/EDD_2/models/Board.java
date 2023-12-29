@@ -112,8 +112,10 @@ public class Board {
     public void setUtility (Player player){
         this.utility = utility(player);
     }
+
     
     public void setUtility(int utility){
         this.utility = utility;
     }
+
 }
