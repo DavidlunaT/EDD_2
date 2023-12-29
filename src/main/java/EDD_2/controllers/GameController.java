@@ -142,5 +142,18 @@ public class GameController implements Initializable {
             
             });
         }
+        boolean isGameOver = true;
+        for(int i = 0; i < 9 ; i++){
+            
+            if (board.getBoard()[i] != 0 ){
+                isGameOver = false;
+                
+            } 
+        }
+        if(isGameOver){
+            winnerText.setText("Draw :C!");
+            
+        }
+        
     }
 }

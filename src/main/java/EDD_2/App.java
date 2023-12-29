@@ -15,10 +15,12 @@ public class App extends Application {
 
     private static Scene scene;
     public static String path = "src/main/resources/";
+    public static boolean isX;
+    public static boolean playerTurn;
             
     @Override
     public void start(Stage stage) throws IOException {
-        scene = new Scene(loadFXML("selecting"), 640, 480);
+        scene = new Scene(loadFXML("game"), 640, 480);
         stage.setScene(scene);
         stage.show();
     }
@@ -38,5 +40,6 @@ public class App extends Application {
     public static void changeRoot(Parent rootNode) {
         scene.setRoot(rootNode);
     }
+   
 
 }

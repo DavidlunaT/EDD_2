@@ -42,10 +42,23 @@ public class SelectingController implements Initializable {
     public void confirmSelected(ActionEvent actionEvent) {
         if(xRadioBtn.isSelected()){
             if(iniciarRadioBtn.isSelected()){
-                try {App.setRoot("gamePvC");} catch (IOException ex) {}    
+                App.isX = true;
+                App.playerTurn = true;
+                try {App.setRoot("gamePvC");} catch (IOException ex) {}                
             }
-            
+            App.isX = true;
+            App.playerTurn = false;
+            try {App.setRoot("gamePvC");} catch (IOException ex) {}
         }
+        if(iniciarRadioBtn.isSelected()){
+                App.isX = false;
+                App.playerTurn = true;
+                try {App.setRoot("gameP PvC");} catch (IOException ex) {}
+        }
+        
+        App.isX = false;
+        App.playerTurn = false;
+        try {App.setRoot("gamePvC");} catch (IOException ex) {}
         
     }
 

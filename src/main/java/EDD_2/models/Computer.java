@@ -21,7 +21,10 @@ public class Computer extends Player {
         return id;
     }
 
-
+    public int getMove(Board board){
+        return 0;
+    }
+    
     public void calculateBestMove(){
         
     }
