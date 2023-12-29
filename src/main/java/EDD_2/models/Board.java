@@ -109,4 +109,10 @@ public class Board {
         this.utility = utility(player);
     }
 
+    public int getUtility() {
+        return utility;
+    }
+    
+    
+
 }

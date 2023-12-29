@@ -5,6 +5,7 @@
 package EDD_2.models;
 
 import EDD_2.dataStructures.Tree;
+import EDD_2.dataStructures.TreeNode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -23,14 +24,13 @@ public class MiniMax {
 
     public void gameTree() {
         Tree<Board> treeGame = new Tree<>(currentBoard);
-        List<Tree<Board>> states = createStates(1,currentBoard);
+        List<Tree<Board>> states = createStates(1, currentBoard);
         treeGame.getRootNode().setChildren(states);
         for (Tree<Board> children : states) {
-            List<Tree<Board>> oponentStates = createStates(2,children.getRoot());
+            List<Tree<Board>> oponentStates = createStates(2, children.getRoot());
             children.getRootNode().setChildren(oponentStates);
         }
     }
-    
 
     public List<Tree<Board>> createStates(int idPlayer, Board b) {
         List<Tree<Board>> states = new ArrayList<>();
@@ -48,16 +48,29 @@ public class MiniMax {
     public static void copyArray(int[] source, int[] destination) {
         System.arraycopy(source, 0, destination, 0, source.length);
     }
-    
-    
-    
-    public void setMin(){
+
+    public void setMin() {
         //seteamos utilidades de los hijos del root con el valor minimo de cada hijo propio
     }
+
+    public Board searchMax() {
+        List<Tree<Board>> rootTreeGame = treeGame.getRootNode().getChildren();
+        for (Tree<Board> tb : rootTreeGame) {
+            Board b = tb.getRoot();
+            if(b.getUtility() == maxUtility()){
+                return b;
+            }
+        }
+        return null;
+    }
     
-    public Board searchMax(){
-        //retornamos el board con la mayor utilidad (de los hijos del root)
-        Board bestBoard = new Board();
-        return bestBoard;
+    public int maxUtility(){
+        List<Tree<Board>> rootTreeGame = treeGame.getRootNode().getChildren();
+        int maxUtility = Integer.MIN_VALUE;
+        for (Tree<Board> tb : rootTreeGame) {
+            Board b = tb.getRoot();
+            maxUtility = Math.max(maxUtility, b.getUtility()); //crear getUtility
+        }
+        return maxUtility;
     }
 }
