@@ -19,6 +19,7 @@ public class MiniMax {
     private Board currentBoard;
     private Tree<Board> treeGame;    
     private int size = 9;
+    private int id;
 
     public MiniMax(Board actualGame, Player p) {
         this.currentBoard = actualGame;
