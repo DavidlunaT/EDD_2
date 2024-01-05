@@ -117,6 +117,7 @@ public class GamePvCController implements Initializable {
         button.setDisable(false);
         board.clear();
         button.setText("");
+        gameOver = false;
         firstMove();
     }
 
@@ -145,6 +146,9 @@ public class GamePvCController implements Initializable {
             //visualizar el board
             for(int i = 0; i < 9; i++){
                 System.out.print(board.getBoard()[i]);
+                if(i==2 || i==5 || i == 8){
+                    System.out.println("");
+                }
             }
             System.out.println("");
             
@@ -163,9 +167,9 @@ public class GamePvCController implements Initializable {
     
     //Computadora ejecuta su movimiento
     public void computerMove(){
-      
-        //movimiento de Pc
-        int posicionOptima = computer.calculateBestMove(board);
+      if(!gameOver){
+          //movimiento de Pc
+        int posicionOptima = computer.calculateBestMove(board,computer.getId(),player.getId());
         board.setMove( posicionOptima , computer.getId());
         Button SelectedButton = buttons.get(posicionOptima);
         if(App.isX){
@@ -175,7 +179,9 @@ public class GamePvCController implements Initializable {
         }else{
             SelectedButton.setText("X"); 
             SelectedButton.setDisable(true);
-            } 
+            }  
+      }
+       
         
           
     }

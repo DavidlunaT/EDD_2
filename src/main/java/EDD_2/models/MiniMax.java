@@ -26,8 +26,8 @@ public class MiniMax {
         this.playerTurn = p;
     }
     
-    public void initializeUtility(){
-        gameTree(playerTurn.getId(),currentBoard.x); //Crear el arbol y lo llena los 2 niveles
+    public void initializeUtility(int idTurn, int idOponent){
+        gameTree(idTurn,idOponent); //Crear el arbol y lo llena los 2 niveles
         setMin(); //Setea la utilidad de los boards hijos
     }
 

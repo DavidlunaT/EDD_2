@@ -21,9 +21,9 @@ public class Computer extends Player {
         return id;
     }
  
-    public int calculateBestMove(Board b){
+    public int calculateBestMove(Board b, int idTurn, int idOponent){
         minimax.setCurrentBoard(b);
-        minimax.initializeUtility();
+        minimax.initializeUtility(idTurn,idOponent);
         return minimax.searchMaxMove();
 
 
