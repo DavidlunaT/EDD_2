@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 EDD_2\models\Computer.class
 module-info.class
 EDD_2\dataStructures\Tree.class
@@ -12,3 +13,6 @@ EDD_2\dataStructures\TreeNode.class
 EDD_2\models\Player.class
 EDD_2\App.class
 EDD_2\controllers\GamePvCController.class
+=======
+module-info.class
+>>>>>>> 7d7bd4af12711c2efc51b53035c5018a1d4761a5

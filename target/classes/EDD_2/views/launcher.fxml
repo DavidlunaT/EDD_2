@@ -12,21 +12,21 @@
    <children>
       <Label alignment="CENTER" layoutX="134.0" layoutY="63.0" prefHeight="84.0" prefWidth="388.0" text="Let's Tic Tac Toe!" textAlignment="CENTER" textFill="#eee000">
          <font>
-            <Font name="Courier New" size="35.0" />
+            <Font name="Courier New Bold" size="35.0" />
          </font></Label>
-      <Button layoutX="154.0" layoutY="164.0" mnemonicParsing="false" onAction="#switchToGameController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-radius: 25; -fx-border-color: #EEE000;" text="Human vs Human" textFill="#01dbd9">
+      <Button fx:id="btn1" layoutX="154.0" layoutY="164.0" mnemonicParsing="false" onAction="#switchToGameController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: transparent; -fx-border-color: #EEE000;" text="Human vs Human" textFill="#eee000">
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>
-      <Button layoutX="156.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToSelectingController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000; -fx-border-radius: 25;" text="Human vs Computer" textFill="#01dbd9">
+      <Button fx:id="btn2" layoutX="156.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToSelectingController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000;" text="Human vs Computer" textFill="#eee000">
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>
-      <Button layoutX="156.0" layoutY="334.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000; -fx-border-radius: 25;" text="Computer vs Computer" textFill="#01dbd9">
+      <Button fx:id="btn3" layoutX="156.0" layoutY="334.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000;" text="Computer vs Computer" textFill="#eee000">
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>
-      <ImageView fitHeight="56.0" fitWidth="61.0" layoutX="80.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="56.0" fitWidth="61.0" layoutX="84.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/2.png" />
          </image>
@@ -36,7 +36,7 @@
             <Image url="@../images/2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="61.0" layoutX="506.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="56.0" fitWidth="61.0" layoutX="510.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/2.png" />
          </image>
@@ -56,7 +56,7 @@
             <Image url="@../images/1.png" />
          </image>
       </ImageView>
-      <Line endX="427.87005615234375" endY="-1.33514404296875E-5" layoutX="169.0" layoutY="29.0" startX="-123.4729232788086" startY="-1.33514404296875E-5" stroke="#eee000" />
+      <Line endX="427.87005615234375" endY="-1.33514404296875E-5" layoutX="167.0" layoutY="28.0" startX="-123.4729232788086" startY="-1.33514404296875E-5" stroke="#eee000" />
       <Line endX="-141.972900390625" endY="407.5" layoutX="185.0" layoutY="43.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />
       <Line endX="427.87005615234375" endY="-1.33514404296875E-5" layoutX="167.0" layoutY="451.0" startX="-123.4729232788086" startY="-1.33514404296875E-5" stroke="#eee000" />
       <Line endX="-142.62994384765625" endY="407.0" layoutX="738.0" layoutY="44.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />

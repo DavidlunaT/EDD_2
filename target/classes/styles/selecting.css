@@ -2,6 +2,67 @@
  * Empty Stylesheet file.
  */
 
-.mainFxmlClass {
+/* Customize the label (the container) */
+.container {
+  -fx-display: block;
+  -fx-position: relative;
+  -fx-padding-left: 35px;
+  -fx-margin-bottom: 12px;
+  -fx-cursor: pointer;
+  -fx-webkit-user-select: none;
+  -fx-moz-user-select: none;
+  -fx-ms-user-select: none;
+  user-select: none;
+}
 
+/* Hide the browser's default radio button */
+.container input {
+  -fx-position: absolute;
+  -fx-opacity: 0;
+  -fx-cursor: pointer;
+  -fx-height: 0;
+  -fx-width: 0;
+}
+
+/* Create a custom radio button */
+.checkmark {
+  -fx-position: absolute;
+  -fx-top: 0;
+  -fx-left: 0;
+  -fx-height: 25px;
+  -fx-width: 25px;
+  -fx-background-color: #eee;
+  -fx-border-radius: 50%;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  -fx-background-color: #ccc;
+}
+
+/* When the radio button is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  -fx-background-color: #2196F3;
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+.checkmark:after {
+  -fx-content: "";
+  -fx-position: absolute;
+  -fx-display: none;
+}
+
+/* Show the indicator (dot/circle) when checked */
+.container input:checked ~ .checkmark:after {
+  -fx-display: block;
+}
+
+/* Style the indicator (dot/circle) */
+.container .checkmark:after {
+  -fx-top: 9px;
+  -fx-left: 9px;
+  -fx-width: 8px;
+  -fx-height: 8px;
+  -fx-border-radius: 50%;
+  -fx-background: white;
 }

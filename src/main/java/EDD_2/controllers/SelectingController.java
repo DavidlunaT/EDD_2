@@ -10,10 +10,15 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 
 /**
  * FXML Controller class
@@ -28,6 +33,10 @@ public class SelectingController implements Initializable {
     public RadioButton xRadioBtn;
     public Button confirm;
     public Button cancel;
+    @FXML
+    private ImageView gif;
+
+
 
     /**
      * Initializes the controller class.
@@ -35,14 +44,19 @@ public class SelectingController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        xRadioBtn.setSelected(true);
-        iniciarRadioBtn.setSelected(true);
+        
+        gif.setImage(new Image("/EDD_2/images/3.gif"));
+        effectsButtons(confirm);
+        effectsButtons(cancel);
+        changeImages();
     }
 
+    @FXML
     public void confirmSelected(ActionEvent actionEvent) {
         if(xRadioBtn.isSelected()){
             
             if(iniciarRadioBtn.isSelected()){
+                gif.setImage(new Image("/EDD_2/images/4.gif"));
                 App.isX = true;
                 App.playerTurn = true;
                 try {App.setRoot("gamePvC");} catch (IOException ex) {}                
@@ -54,6 +68,7 @@ public class SelectingController implements Initializable {
             
         }
         if(oRadioBtn.isSelected()){
+            gif.setImage(new Image("/EDD_2/images/5.gif"));
             if(iniciarRadioBtn.isSelected()){
                 App.isX = false;
                 App.playerTurn = true;
@@ -70,7 +85,27 @@ public class SelectingController implements Initializable {
         
     }
 
+    @FXML
     public void cancelRadioBtn(ActionEvent actionEvent) {
         
+    }
+    
+    public void effectsButtons(Button btn){
+        String style = btn.getStyle();
+        final String hovered = "-fx-background-color: transparent; -fx-border-color: #01dbd9; -fx-text-fill: #01dbd9;";
+        btn.setOnMouseEntered(e -> btn.setStyle(hovered));
+        btn.setOnMouseExited(e -> btn.setStyle(style));
+    }
+    
+    public void changeImages(){
+        icon.selectedToggleProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue == xRadioBtn) {
+                // Cambiar la imagen cuando se selecciona el radioButton1
+                gif.setImage(new Image("/EDD_2/images/4.gif"));
+            } else if (newValue == oRadioBtn) {
+                // Cambiar la imagen cuando se selecciona el radioButton2
+                gif.setImage(new Image("/EDD_2/images/5.gif"));
+            }
+        });
     }
 }
