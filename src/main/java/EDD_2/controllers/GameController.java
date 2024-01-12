@@ -78,6 +78,8 @@ public class GameController implements Initializable {
             setupButton(button);
             button.setFocusTraversable(false);
         });
+        
+       this.changeFillOfButtons();
     }
 
     @FXML
@@ -135,5 +137,18 @@ public class GameController implements Initializable {
             button.setDisable(true);
         });
 
+    }
+    
+    public void changeFillOfButtons(){
+        changeTextColor(button1); 
+        changeTextColor(button2); 
+        changeTextColor(button3); 
+        changeTextColor(button4); 
+        changeTextColor(button5); 
+    }
+    
+    public void changeTextColor(Button btn){
+        btn.setStyle("-fx-text-fill: #eee000; -fx-font-family: 'Courier New'; -fx-font-size: 45; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: #eee000;");
+        
     }
 }

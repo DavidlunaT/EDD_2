@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 C:\Users\gabri\Desktop\gitProjects\EDD_2\src\main\java\EDD_2\models\Partida.java
 C:\Users\gabri\Desktop\gitProjects\EDD_2\src\main\java\EDD_2\App.java
 C:\Users\gabri\Desktop\gitProjects\EDD_2\src\main\java\EDD_2\dataStructures\TreeNode.java
@@ -13,19 +12,3 @@ C:\Users\gabri\Desktop\gitProjects\EDD_2\src\main\java\EDD_2\models\Person.java
 C:\Users\gabri\Desktop\gitProjects\EDD_2\src\main\java\EDD_2\models\Player.java
 C:\Users\gabri\Desktop\gitProjects\EDD_2\src\main\java\EDD_2\controllers\SelectingController.java
 C:\Users\gabri\Desktop\gitProjects\EDD_2\src\main\java\EDD_2\models\Computer.java
-=======
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/models/Partida.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/controllers/SelectingController.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/dataStructures/Tree.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/models/Person.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/models/Computer.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/controllers/GamePvCController.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/models/MiniMax.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/models/Player.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/controllers/GameController.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/dataStructures/TreeNode.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/controllers/LauncherController.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/module-info.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/models/Board.java
-/Users/gabsy/Desktop/ProyectosGit/EDD_2/src/main/java/EDD_2/App.java
->>>>>>> 7d7bd4af12711c2efc51b53035c5018a1d4761a5

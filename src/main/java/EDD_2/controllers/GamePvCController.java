@@ -104,6 +104,7 @@ public class GamePvCController implements Initializable {
         System.out.println("initializer");
         firstMove();
         winnerText.setText("Your Turn");
+        this.changeFillOfButtons();
     }
 
     @FXML
@@ -209,6 +210,23 @@ public class GamePvCController implements Initializable {
             button.setDisable(true);
         });
 
+    }
+    
+    public void changeFillOfButtons(){
+        changeTextColor(button1); 
+        changeTextColor(button2); 
+        changeTextColor(button3); 
+        changeTextColor(button4); 
+        changeTextColor(button5); 
+        changeTextColor(button6); 
+        changeTextColor(button7); 
+        changeTextColor(button8); 
+        changeTextColor(button9); 
+    }
+    
+    public void changeTextColor(Button btn){
+        btn.setStyle("-fx-text-fill: #eee000; -fx-font-family: 'Courier New'; -fx-font-size: 45; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: #eee000;");
+        
     }
 }
 
