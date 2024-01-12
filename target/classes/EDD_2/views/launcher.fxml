@@ -14,19 +14,19 @@
          <font>
             <Font name="Courier New Bold" size="35.0" />
          </font></Label>
-      <Button layoutX="154.0" layoutY="164.0" mnemonicParsing="false" onAction="#switchToGameController" prefHeight="55.0" prefWidth="344.0" stylesheets="@../../styles/launcher.css" text="Human vs Human" textFill="#01dbd9">
+      <Button fx:id="btn1" layoutX="154.0" layoutY="164.0" mnemonicParsing="false" onAction="#switchToGameController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: transparent; -fx-border-color: #EEE000;" text="Human vs Human" textFill="#eee000">
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>
-      <Button layoutX="156.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToSelectingController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000; -fx-border-radius: 25;" text="Human vs Computer" textFill="#01dbd9">
+      <Button fx:id="btn2" layoutX="156.0" layoutY="250.0" mnemonicParsing="false" onAction="#switchToSelectingController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000;" text="Human vs Computer" textFill="#eee000">
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>
-      <Button layoutX="156.0" layoutY="334.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000; -fx-border-radius: 25;" text="Computer vs Computer" textFill="#01dbd9">
+      <Button fx:id="btn3" layoutX="156.0" layoutY="334.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000;" text="Computer vs Computer" textFill="#eee000">
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>
-      <ImageView fitHeight="56.0" fitWidth="61.0" layoutX="80.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="56.0" fitWidth="61.0" layoutX="84.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/2.png" />
          </image>
@@ -36,7 +36,7 @@
             <Image url="@../images/2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="56.0" fitWidth="61.0" layoutX="506.0" layoutY="167.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="56.0" fitWidth="61.0" layoutX="510.0" layoutY="164.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/2.png" />
          </image>

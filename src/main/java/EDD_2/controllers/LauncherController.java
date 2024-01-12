@@ -8,6 +8,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 
 /**
@@ -17,10 +18,20 @@ import javafx.scene.control.ScrollPane;
  */
 public class LauncherController implements Initializable {
 
+    @FXML
+    private Button btn1;
+    @FXML
+    private Button btn2;
+    @FXML
+    private Button btn3;
+
    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        effectsButtons(btn1);
+        effectsButtons(btn2);
+        effectsButtons(btn3);
     }
 
     @FXML
@@ -36,4 +47,10 @@ public class LauncherController implements Initializable {
         try {App.setRoot("selecting");} catch (IOException ex) {}
     }
     
+    public void effectsButtons(Button btn){
+        String style = btn.getStyle();
+        final String hovered = "-fx-background-color: transparent; -fx-border-color: #01dbd9; -fx-text-fill: #01dbd9;";
+        btn.setOnMouseEntered(e -> btn.setStyle(hovered));
+        btn.setOnMouseExited(e -> btn.setStyle(style));
+    }
 }

@@ -9,11 +9,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .button {
     -fx-background-color: "black";
-    -fx-border-color: #EEE000;
-    -fx-border-radius: 25
+    -fx-border-color: #EEE000;    
+    -fx-border-radius: 25;    
 }
 
 .button:hover {
-    -fx-background-color: "green";
-    -fx-border-radius: 25
+    -fx-background-color: "white";
+    -fx-border-color: #EEE000;    
+    -fx-border-radius: 25;
 }
