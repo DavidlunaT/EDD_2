@@ -225,8 +225,11 @@ public class GamePvCController implements Initializable {
     }
     
     public void changeTextColor(Button btn){
-        btn.setStyle("-fx-text-fill: #eee000; -fx-font-family: 'Courier New'; -fx-font-size: 45; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: #eee000;");
-        
+        btn.setStyle("-fx-text-fill: #eee000; "
+                + "-fx-font-family: 'Courier New'; "
+                + "-fx-font-size: 45; -fx-font-weight: bold; "
+                + "-fx-background-color: transparent; "
+                + "-fx-border-color: #eee000;");        
     }
 }
 

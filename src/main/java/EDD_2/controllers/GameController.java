@@ -13,6 +13,9 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
+import javafx.scene.Node;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 public class GameController implements Initializable {
 
@@ -56,6 +59,8 @@ public class GameController implements Initializable {
     private Player playerX;
     
     private Player playerCircle;
+    @FXML
+    private Button restart;
 
 
     //nueva partida
@@ -80,6 +85,7 @@ public class GameController implements Initializable {
         });
         
        this.changeFillOfButtons();
+       restart.setGraphic(new ImageView(new Image("")));
     }
 
     @FXML
