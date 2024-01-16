@@ -1,8 +1,10 @@
 package EDD_2.controllers;
 
+import EDD_2.App;
 import EDD_2.models.Board;
 import EDD_2.models.Person;
 import EDD_2.models.Player;
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -61,6 +63,8 @@ public class GameController implements Initializable {
     private Player playerCircle;
     @FXML
     private Button restart;
+    @FXML
+    private Button home;
 
 
     //nueva partida
@@ -156,5 +160,10 @@ public class GameController implements Initializable {
     public void changeTextColor(Button btn){
         btn.setStyle("-fx-text-fill: #eee000; -fx-font-family: 'Courier New'; -fx-font-size: 45; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: #eee000;");
         
+    }
+
+    @FXML
+    private void backHome(ActionEvent event) {
+        try {App.setRoot("launcher");} catch (IOException ex) {}
     }
 }

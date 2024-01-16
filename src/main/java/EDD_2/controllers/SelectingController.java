@@ -7,11 +7,16 @@ package EDD_2.controllers;
 import EDD_2.App;
 import java.io.IOException;
 import java.net.URL;
+import java.time.Duration;
 import java.util.ResourceBundle;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.application.Platform;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
@@ -19,6 +24,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.StackPane;
+import javafx.stage.Stage;
 
 
 /**
@@ -37,9 +44,14 @@ public class SelectingController implements Initializable {
     @FXML
     private ImageView gif;
     @FXML
-    private TextField txtPlayerName;
-    
+    private TextField txtPlayerName;   
     public static String playerName;
+    @FXML
+    private RadioButton YesBtn;
+    @FXML
+    private RadioButton NoBtn;
+    @FXML
+    private Label startLabel;
 
 
 
@@ -54,50 +66,92 @@ public class SelectingController implements Initializable {
         effectsButtons(confirm);
         effectsButtons(cancel);
         changeImages();
+
+    }
+    
+    private static void warningMiniWindow(String warning) {
+        Stage primaryStage = new Stage();
+        Label label = new Label(warning);
+        StackPane root = new StackPane();
+        setStyleLabel("18", label);        
+        root.setStyle("-fx-background-color: black;");
+        root.getChildren().add(label);
+        Scene scene = new Scene(root, 300, 100);
+        primaryStage.setTitle("Mensaje");
+        primaryStage.setScene(scene);
+        createThread(primaryStage);
+        primaryStage.show();
+    }
+    
+    public static void setStyleLabel(String size, Label label){
+        label.setStyle("-fx-font-family: 'Courier New';" +
+                "-fx-font-weight: bold;" +
+                "-fx-font-size:"+size+";" +
+                "-fx-text-fill: #eee000;");
+    }
+    
+    public static void createThread(Stage primaryStage){
+        Thread thread = new Thread(() -> 
+           {try 
+                {Thread.sleep(5000);} 
+            catch (InterruptedException e) 
+               {e.printStackTrace();}
+            Platform.runLater(() -> 
+                {primaryStage.close();});
+           });
+        thread.start();
     }
 
+        
     @FXML
     public void confirmSelected(ActionEvent actionEvent) {
-        if(xRadioBtn.isSelected()){
-            
-            if(iniciarRadioBtn.isSelected()){
-                gif.setImage(new Image("/EDD_2/images/4.gif"));
-                App.isX = true;
-                App.playerTurn = true;
-                try {App.setRoot("gamePvC");} catch (IOException ex) {}                
-            }else{
-                App.isX = true;
-                App.playerTurn = false;
-                try {App.setRoot("gamePvC");} catch (IOException ex) {}
-            }
-            
-        }
-        if(oRadioBtn.isSelected()){
-            gif.setImage(new Image("/EDD_2/images/5.gif"));
-            if(iniciarRadioBtn.isSelected()){
-                App.isX = false;
-                App.playerTurn = true;
-                try {App.setRoot("gamePvC");} catch (IOException ex) {}
-            }else{
-                App.isX = false;
-                App.playerTurn = false;
-                try {App.setRoot("gamePvC");} catch (IOException ex) {}
-            }    
-            
-        }
-        if(!txtPlayerName.getText().equals("")){
-            playerName = txtPlayerName.getText();
-        }else{
-            playerName = "guest";
-        }
+        boolean XorO = !xRadioBtn.isSelected() && !oRadioBtn.isSelected();
+        boolean YorN = !YesBtn.isSelected() && !NoBtn.isSelected();
+        boolean missingOption = XorO || YorN;    
         
+        if(missingOption)
+           {warningMiniWindow("Choose an option");}  
         
-        
+        if(xRadioBtn.isSelected())
+               {setForX();}   
+        if(oRadioBtn.isSelected())
+               {setForX();}        
+        setFirstPlayer();
+        setScene("gamePvC");                 
+        setPlayerName(); 
     }
-
+    
+    public void setPlayerName(){
+        if(!txtPlayerName.getText().equals(""))
+           {playerName = txtPlayerName.getText();}
+        else
+            {playerName = "guest"; }
+    }
+    
+    public void setForO(){
+        gif.setImage(new Image("/EDD_2/images/5.gif"));
+        App.isX = false;
+    }
+    
+    public void setForX(){
+        gif.setImage(new Image("/EDD_2/images/4.gif"));
+        App.isX = true;
+    }
+    public void setFirstPlayer(){
+        if(YesBtn.isSelected())
+            {App.playerTurn = true;}   
+        else if(NoBtn.isSelected())
+           {App.playerTurn = false;}
+    }
+    
+    
     @FXML
     public void cancelRadioBtn(ActionEvent actionEvent) {
-        
+        setScene("launcher");
+    }
+    
+    public void setScene(String sceneName){
+        try {App.setRoot(sceneName);} catch (IOException ex) {}
     }
     
     public void effectsButtons(Button btn){
@@ -117,5 +171,15 @@ public class SelectingController implements Initializable {
                 gif.setImage(new Image("/EDD_2/images/5.gif"));
             }
         });
+    }
+
+    @FXML
+    private void setLabelX(ActionEvent event) {
+        startLabel.setText("X starts?");
+    }
+
+    @FXML
+    private void setLabelO(ActionEvent event) {
+        startLabel.setText("O starts?");
     }
 }
