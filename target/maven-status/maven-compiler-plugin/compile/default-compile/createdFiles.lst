@@ -1,4 +1,5 @@
 EDD_2\models\Computer.class
+EDD_2\models\Ranking.class
 module-info.class
 EDD_2\dataStructures\Tree.class
 EDD_2\models\Partida.class
@@ -6,6 +7,7 @@ EDD_2\models\Board.class
 EDD_2\models\MiniMax.class
 EDD_2\controllers\GameController.class
 EDD_2\controllers\SelectingController.class
+EDD_2\controllers\RankingController.class
 EDD_2\controllers\LauncherController.class
 EDD_2\models\Person.class
 EDD_2\dataStructures\TreeNode.class

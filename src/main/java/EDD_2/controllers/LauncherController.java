@@ -1,8 +1,11 @@
 package EDD_2.controllers;
 
 import EDD_2.App;
+import EDD_2.models.Person;
+import EDD_2.models.Ranking;
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -32,6 +35,13 @@ public class LauncherController implements Initializable {
         effectsButtons(btn1);
         effectsButtons(btn2);
         effectsButtons(btn3);
+        
+        ArrayList<Person> peopleRegister = Ranking.loadPeople();
+        System.out.println("ranking");
+        for(Person p: peopleRegister){
+            
+            System.out.println(p.getNickname() + " " + p.getContWins() + " " + p.getContDefeats());
+        }
     }
 
     @FXML

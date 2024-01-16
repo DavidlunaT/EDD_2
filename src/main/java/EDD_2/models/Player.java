@@ -4,12 +4,14 @@
  */
 package EDD_2.models;
 
+import java.io.Serializable;
+
 /**
  *
  * @author David
  */
-public abstract class  Player  {
-    
+public abstract class  Player  implements Serializable{
+    private static final long serialVersionUID = 10L;
     private int id;
     
    public abstract int getId();

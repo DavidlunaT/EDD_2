@@ -1,13 +1,15 @@
 package EDD_2.models;
 
 import EDD_2.dataStructures.Tree;
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author David
  */
-public class Computer extends Player {
+public class Computer extends Player implements Serializable{
+    private static final long serialVersionUID = 10L;
     private int id;
     private MiniMax minimax;
     
