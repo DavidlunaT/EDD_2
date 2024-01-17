@@ -85,7 +85,8 @@ public class GamePvCController implements Initializable {
             Person playerX = new Person(1);
             if (!SelectingController.playerName.equals("guest")) {
                 playerX.setNickname(SelectingController.playerName);
-                if(peopleRegister.contains(playerX)){
+                //System.out.println(playerX.getNickname());
+                if (peopleRegister.contains(playerX)) {
                     playerX.setContWins(peopleRegister.get(peopleRegister.indexOf(playerX)).getContWins());
                     playerX.setContDefeats(peopleRegister.get(peopleRegister.indexOf(playerX)).getContDefeats());
                 }
@@ -98,7 +99,7 @@ public class GamePvCController implements Initializable {
             Person playerCircle = new Person(2);
             if (!SelectingController.playerName.equals("guest")) {
                 playerCircle.setNickname(SelectingController.playerName);
-                if(peopleRegister.contains(playerCircle)){
+                if (peopleRegister.contains(playerCircle)) {
                     playerCircle.setContWins(peopleRegister.get(peopleRegister.indexOf(playerCircle)).getContWins());
                     playerCircle.setContDefeats(peopleRegister.get(peopleRegister.indexOf(playerCircle)).getContDefeats());
                 }
@@ -126,7 +127,6 @@ public class GamePvCController implements Initializable {
     void restartGame(ActionEvent event) {
         buttons.forEach(this::resetButton);
         winnerText.setText("Tic-Tac-Toe");
-        System.out.println(player.getNickname() + " " + player.getContWins() + " " + player.getContDefeats());
     }
 
     @FXML
@@ -139,15 +139,18 @@ public class GamePvCController implements Initializable {
     }
 
     public void recoverPerson() {
-        ArrayList<Person> peopleRegister = Ranking.loadPeople();
-        Person nPerson = new Person(player.getNickname(), player.getContWins(), player.getContDefeats());
-        if (peopleRegister.contains(nPerson)) {
-            peopleRegister.remove(nPerson);
-            peopleRegister.add(nPerson);
-        } else {
-            peopleRegister.add(nPerson);
+        if (!player.getNickname().equals("")) {
+            ArrayList<Person> peopleRegister = Ranking.loadPeople();
+            Person nPerson = new Person(player.getNickname(), player.getContWins(), player.getContDefeats());
+            if (peopleRegister.contains(nPerson)) {
+                peopleRegister.remove(nPerson);
+                peopleRegister.add(nPerson);
+            } else {
+                peopleRegister.add(nPerson);
+            }
+            Ranking.escribirEnArchivo(peopleRegister);
         }
-        Ranking.escribirEnArchivo(peopleRegister);
+
     }
 
     //
@@ -176,11 +179,24 @@ public class GamePvCController implements Initializable {
 //            } catch (InterruptedException ex) {
 //                ex.printStackTrace();
 //            }
-            //checkIfGameIsOver();
-            winnerText.setText("...");
-            computerMove();
+            checkIfGameIsOver();
+            if (!gameOver) {
+                winnerText.setText("...");
+                computerMove();
+            }
             winnerText.setText("Your Turn");
             checkIfGameIsOver();
+            if (gameOver) {
+                if (!player.getNickname().equals("guest")) {
+                    if (App.isX) {
+                        System.out.println("contador de victorias previo a acabar el juego:" + player.getContWins());
+                        player.setContWins(player.getContWins() + 1);
+                    } else {
+                        player.setContDefeats(player.getContDefeats() + 1);
+                    }
+                }
+            }
+
             //visualizar el board
             for (int i = 0; i < 9; i++) {
                 System.out.print(board.getBoard()[i]);
@@ -229,25 +245,11 @@ public class GamePvCController implements Initializable {
         if (winner == board.x) {
             winnerText.setText("X WON!");
             disableButtons();
-            if (!player.getNickname().equals("guest")) {
-                if (App.isX) {
-                    System.out.println("contador de victorias previo a acabar el juego:" + player.getContWins());
-                    player.setContWins(player.getContWins() + 1);
-                } else {
-                    player.setContDefeats(player.getContDefeats() + 1);
-                }
-            }
+
             gameOver = true;
         } else if (winner == board.o) {
             winnerText.setText("O WON!");
             disableButtons();
-            if (!player.getNickname().equals("guest")) {
-                if (App.isX) {
-                    player.setContDefeats(player.getContDefeats() + 1);
-                } else {
-                    player.setContWins(player.getContWins() + 1);
-                }
-            }
             gameOver = true;
         } else if (winner == -1) {
             winnerText.setText("TIE");
@@ -279,7 +281,11 @@ public class GamePvCController implements Initializable {
     }
 
     public void changeTextColor(Button btn) {
-        btn.setStyle("-fx-text-fill: #eee000; -fx-font-family: 'Courier New'; -fx-font-size: 45; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: #eee000;");
-
+        btn.setStyle("-fx-text-fill: #eee000; "
+                + "-fx-font-family: 'Courier New'; "
+                + "-fx-font-size: 45; -fx-font-weight: bold; "
+                + "-fx-background-color: transparent; "
+                + "-fx-border-color: #eee000;");
     }
+
 }

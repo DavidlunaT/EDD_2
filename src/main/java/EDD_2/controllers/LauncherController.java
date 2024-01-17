@@ -35,13 +35,6 @@ public class LauncherController implements Initializable {
         effectsButtons(btn1);
         effectsButtons(btn2);
         effectsButtons(btn3);
-        
-        ArrayList<Person> peopleRegister = Ranking.loadPeople();
-        System.out.println("ranking");
-        for(Person p: peopleRegister){
-            
-            System.out.println(p.getNickname() + " " + p.getContWins() + " " + p.getContDefeats());
-        }
     }
 
     @FXML
@@ -57,10 +50,15 @@ public class LauncherController implements Initializable {
         try {App.setRoot("selecting");} catch (IOException ex) {}
     }
     
+    @FXML
+    public void switchToRankingController(ActionEvent e) throws IOException{
+        try {App.setRoot("ranking");} catch (IOException ex) {}
+    }
     public void effectsButtons(Button btn){
         String style = btn.getStyle();
         final String hovered = "-fx-background-color: transparent; -fx-border-color: #01dbd9; -fx-text-fill: #01dbd9;";
         btn.setOnMouseEntered(e -> btn.setStyle(hovered));
         btn.setOnMouseExited(e -> btn.setStyle(style));
     }
+  
 }

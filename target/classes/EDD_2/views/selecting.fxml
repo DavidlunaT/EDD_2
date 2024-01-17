@@ -20,7 +20,7 @@
          <font>
             <Font name="Courier New Bold" size="13.0" />
          </font></Button>
-      <RadioButton layoutX="117.0" layoutY="145.0" mnemonicParsing="false" styleClass="container" stylesheets="@../../styles/selecting.css" text="X" textFill="#01dbd9" fx:id="xRadioBtn">
+      <RadioButton layoutX="118.0" layoutY="171.0" mnemonicParsing="false" onAction="#setLabelX" styleClass="container" stylesheets="@../../styles/selecting.css" text="X" textFill="#01dbd9" fx:id="xRadioBtn">
          <toggleGroup>
             <ToggleGroup fx:id="icon" />
          </toggleGroup>
@@ -32,11 +32,11 @@
          <font>
             <Font name="Courier New Bold" size="13.0" />
          </font></Button>
-      <RadioButton fx:id="oRadioBtn" layoutX="117.0" layoutY="195.0" mnemonicParsing="false" styleClass="container" stylesheets="@../../styles/selecting.css" text="O" textFill="#01dbd9" toggleGroup="$icon">
+      <RadioButton fx:id="oRadioBtn" layoutX="118.0" layoutY="218.0" mnemonicParsing="false" onAction="#setLabelO" styleClass="container" stylesheets="@../../styles/selecting.css" text="O" textFill="#01dbd9" toggleGroup="$icon">
          <font>
             <Font name="Courier New Bold" size="20.0" />
          </font></RadioButton>
-      <RadioButton fx:id="iniciarRadioBtn" contentDisplay="TOP" layoutX="117.0" layoutY="252.0" mnemonicParsing="false" styleClass="container" stylesheets="@../../styles/selecting.css" text="Iniciar" textFill="#01dbd9">
+      <RadioButton fx:id="YesBtn" contentDisplay="TOP" layoutX="118.0" layoutY="302.0" mnemonicParsing="false" styleClass="container" stylesheets="@../../styles/selecting.css" text="Yes" textFill="#01dbd9">
          <font>
             <Font name="Courier New Bold" size="20.0" />
          </font></RadioButton>
@@ -49,7 +49,20 @@
       <Line endX="-141.972900390625" endY="407.5" layoutX="185.0" layoutY="43.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />
       <Line endX="427.87005615234375" endY="-1.33514404296875E-5" layoutX="167.0" layoutY="451.0" startX="-123.4729232788086" startY="-1.33514404296875E-5" stroke="#eee000" />
       <Line endX="-142.62994384765625" endY="407.0" layoutX="738.0" layoutY="44.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />
-      <ImageView fx:id="gif" fitHeight="214.0" fitWidth="211.0" layoutX="350.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="txtPlayerName" layoutX="117.0" layoutY="305.0" promptText="PlayerName" />
+      <ImageView fx:id="gif" fitHeight="195.0" fitWidth="211.0" layoutX="350.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="txtPlayerName" layoutX="381.0" layoutY="338.0" prefHeight="25.0" prefWidth="150.0" promptText="Write your name" style="-fx-background-color: transparent; -fx-border-color: #01dbd9; -fx-text-fill: #01dbd9;">
+         <font>
+            <Font name="Courier New Italic" size="12.0" />
+         </font></TextField>
+      <RadioButton fx:id="NoBtn" contentDisplay="TOP" layoutX="215.0" layoutY="302.0" mnemonicParsing="false" styleClass="container" stylesheets="@../../styles/selecting.css" text="No" textFill="#01dbd9">
+         <font>
+            <Font name="Courier New Bold" size="20.0" />
+         </font>
+      </RadioButton>
+      <Label fx:id="startLabel" layoutX="118.0" layoutY="273.0" prefHeight="17.0" prefWidth="171.0" textFill="#eee000">
+         <font>
+            <Font name="Courier New Bold" size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

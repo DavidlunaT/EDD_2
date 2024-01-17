@@ -9,6 +9,7 @@ EDD_2\controllers\GameController.class
 EDD_2\controllers\SelectingController.class
 EDD_2\controllers\RankingController.class
 EDD_2\controllers\LauncherController.class
+EDD_2\controllers\RankingController$1.class
 EDD_2\models\Person.class
 EDD_2\dataStructures\TreeNode.class
 EDD_2\models\Player.class
