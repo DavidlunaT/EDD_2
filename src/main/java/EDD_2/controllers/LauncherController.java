@@ -27,6 +27,8 @@ public class LauncherController implements Initializable {
     private Button btn2;
     @FXML
     private Button btn3;
+    @FXML
+    private Button btnRanking;
 
    
     @Override
@@ -35,14 +37,12 @@ public class LauncherController implements Initializable {
         effectsButtons(btn1);
         effectsButtons(btn2);
         effectsButtons(btn3);
+        effectsButtons(btnRanking);
     }
 
     @FXML
     public void switchToGameController(ActionEvent e) throws IOException{
-        try {
-            App.setRoot("game");
-        } catch (IOException ex) {
-        }
+        try {App.setRoot("game");} catch (IOException ex) {}
     }
     
     @FXML
@@ -54,6 +54,7 @@ public class LauncherController implements Initializable {
     public void switchToRankingController(ActionEvent e) throws IOException{
         try {App.setRoot("ranking");} catch (IOException ex) {}
     }
+    
     public void effectsButtons(Button btn){
         String style = btn.getStyle();
         final String hovered = "-fx-background-color: transparent; -fx-border-color: #01dbd9; -fx-text-fill: #01dbd9;";

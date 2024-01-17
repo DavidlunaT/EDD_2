@@ -10,11 +10,11 @@
 
 <AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDD_2.controllers.LauncherController">
    <children>
-      <Label alignment="CENTER" layoutX="134.0" layoutY="63.0" prefHeight="84.0" prefWidth="388.0" text="Let's Tic Tac Toe!" textAlignment="CENTER" textFill="#eee000">
+      <Label alignment="CENTER" layoutX="134.0" layoutY="67.0" prefHeight="84.0" prefWidth="388.0" text="Let's Tic Tac Toe!" textAlignment="CENTER" textFill="#eee000">
          <font>
             <Font name="Courier New Bold" size="35.0" />
          </font></Label>
-      <Button fx:id="btn1" layoutX="154.0" layoutY="164.0" mnemonicParsing="false" onAction="#switchToGameController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: transparent; -fx-border-color: #EEE000;" text="Human vs Human" textFill="#eee000">
+      <Button fx:id="btn1" layoutX="156.0" layoutY="164.0" mnemonicParsing="false" onAction="#switchToGameController" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: transparent; -fx-border-color: #EEE000;" text="Human vs Human" textFill="#eee000">
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>
@@ -60,6 +60,9 @@
       <Line endX="-141.972900390625" endY="407.5" layoutX="185.0" layoutY="43.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />
       <Line endX="427.87005615234375" endY="-1.33514404296875E-5" layoutX="167.0" layoutY="451.0" startX="-123.4729232788086" startY="-1.33514404296875E-5" stroke="#eee000" />
       <Line endX="-142.62994384765625" endY="407.0" layoutX="738.0" layoutY="44.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />
-      <Button layoutX="508.0" layoutY="38.0" mnemonicParsing="false" onAction="#switchToRankingController" text="Best Players" />
+      <Button fx:id="btnRanking" layoutX="454.0" layoutY="50.0" mnemonicParsing="false" onAction="#switchToRankingController" style="-fx-background-color: transparent; -fx-border-color: #eee000;" text="Best Players" textFill="#eee000">
+         <font>
+            <Font name="Courier New" size="13.0" />
+         </font></Button>
    </children>
 </AnchorPane>

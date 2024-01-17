@@ -86,10 +86,10 @@ public class GameController implements Initializable {
         buttons.forEach(button ->{
             setupButton(button);
             button.setFocusTraversable(false);
+            changeTextColor(button);
         });
         
        this.changeFillOfButtons();
-       restart.setGraphic(new ImageView(new Image("")));
     }
 
     @FXML
@@ -158,8 +158,7 @@ public class GameController implements Initializable {
     }
     
     public void changeTextColor(Button btn){
-        btn.setStyle("-fx-text-fill: #eee000; -fx-font-family: 'Courier New'; -fx-font-size: 45; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: #eee000;");
-        
+        btn.setStyle("-fx-text-fill: #eee000; -fx-font-family: 'Courier New'; -fx-font-size: 45; -fx-font-weight: bold; -fx-background-color: transparent; -fx-border-color: #eee000;");      
     }
 
     @FXML
