@@ -45,14 +45,13 @@ public class SelectingController implements Initializable {
     private ImageView gif;
     @FXML
     private TextField txtPlayerName;   
-    public static String playerName;
     @FXML
     private RadioButton YesBtn;
     @FXML
     private RadioButton NoBtn;
     @FXML
     private Label startLabel;
-
+    public static String playerName;
 
 
     /**
@@ -115,14 +114,16 @@ public class SelectingController implements Initializable {
         if(xRadioBtn.isSelected())
                {setForX();}   
         if(oRadioBtn.isSelected())
-               {setForX();}        
+               {setForO();}        
         setFirstPlayer();
-        setScene("gamePvC");                 
-        setPlayerName(); 
+        System.out.println(playerName);
+        setPlayerName();
+        System.out.println(playerName);
+        setScene("gamePvC");
     }
     
     public void setPlayerName(){
-        if(!txtPlayerName.getText().equals("Write your name"))
+        if(txtPlayerName.getText() != null)
            {playerName = txtPlayerName.getText();}
         else
             {playerName = "guest"; }

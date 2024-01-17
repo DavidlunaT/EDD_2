@@ -11,7 +11,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: black;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDD_2.controllers.SelectingController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" style="-fx-background-color: black;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="EDD_2.controllers.SelectingController">
     <stylesheets>
         <URL value="@/styles/selecting.css" />
     </stylesheets>
@@ -50,7 +50,7 @@
       <Line endX="427.87005615234375" endY="-1.33514404296875E-5" layoutX="167.0" layoutY="451.0" startX="-123.4729232788086" startY="-1.33514404296875E-5" stroke="#eee000" />
       <Line endX="-142.62994384765625" endY="407.0" layoutX="738.0" layoutY="44.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />
       <ImageView fx:id="gif" fitHeight="195.0" fitWidth="211.0" layoutX="350.0" layoutY="134.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="txtPlayerName" layoutX="381.0" layoutY="338.0" prefHeight="25.0" prefWidth="150.0" promptText="PlayerName" style="-fx-background-color: transparent; -fx-border-color: #01dbd9; -fx-text-fill: #01dbd9;" text="Write your name">
+      <TextField fx:id="txtPlayerName" layoutX="381.0" layoutY="338.0" prefHeight="25.0" prefWidth="150.0" promptText="Write your name" style="-fx-background-color: transparent; -fx-border-color: #01dbd9; -fx-text-fill: #01dbd9;">
          <font>
             <Font name="Courier New Italic" size="12.0" />
          </font></TextField>

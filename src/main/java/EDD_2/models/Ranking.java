@@ -20,9 +20,6 @@ import java.util.PriorityQueue;
 
 public class Ranking {
 
-    PriorityQueue<Person> ranking = new PriorityQueue<>((p1, p2) -> (p1.getContWins() / p1.getContDefeats()) - (p2.getContWins() / p2.getContDefeats()));
-    ArrayList<Person> peopleRegister = new ArrayList<>();
-    
     public static void escribirEnArchivo(List<Person> contacts) {
 
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(App.path+"EDD_2/"+"files/people.ser"))) {
