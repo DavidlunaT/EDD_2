@@ -122,5 +122,6 @@ public class MiniMax {
     public void setCurrentBoard(Board currentBoard) {
         this.currentBoard = currentBoard;
     }
-
+    
+    
 }
