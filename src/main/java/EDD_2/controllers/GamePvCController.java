@@ -126,7 +126,6 @@ public class GamePvCController implements Initializable {
     void restartGame(ActionEvent event) {
         buttons.forEach(this::resetButton);
         winnerText.setText("Tic-Tac-Toe");
-        System.out.println(player.getNickname() + " " + player.getContWins() + " " + player.getContDefeats());
     }
 
     @FXML
@@ -176,9 +175,11 @@ public class GamePvCController implements Initializable {
 //            } catch (InterruptedException ex) {
 //                ex.printStackTrace();
 //            }
-            //checkIfGameIsOver();
-            winnerText.setText("...");
-            computerMove();
+            checkIfGameIsOver();
+            if(!gameOver){
+                winnerText.setText("...");
+                computerMove();
+            }
             winnerText.setText("Your Turn");
             checkIfGameIsOver();
             //visualizar el board
