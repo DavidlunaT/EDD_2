@@ -41,7 +41,8 @@ public class MiniMax {
             children.getRootNode().setChildren(oponentStates);
         }
     }
-
+    
+    //Crea todos los posibles estados del board de la tabla actual
     public List<Tree<Board>> createStates(int idPlayer, Board b) {
         List<Tree<Board>> states = new ArrayList<>();
         for (int i = 0; i < size; i++) {

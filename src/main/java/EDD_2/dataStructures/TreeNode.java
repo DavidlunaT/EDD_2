@@ -33,7 +33,7 @@ public class TreeNode<E> {
     }
 
     public void setChildren(List<Tree<E>> children) {
-        this.children = children;
+        this.children.addAll(children);
     }
     
 }

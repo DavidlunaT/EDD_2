@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0375992-f828-41e6-8dcb-34c9f3411208" name="Changes" comment="" />
+    <list default="true" id="c0375992-f828-41e6-8dcb-34c9f3411208" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/EDD_2/controllers/GamePvCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EDD_2/controllers/GamePvCController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EDD_2/models/Computer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EDD_2/models/Computer.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -39,5 +42,16 @@
       <updated>1703809518187</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
