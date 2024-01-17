@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0375992-f828-41e6-8dcb-34c9f3411208" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EDD_2/controllers/GamePvCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EDD_2/controllers/GamePvCController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EDD_2/controllers/LauncherController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EDD_2/controllers/LauncherController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/EDD_2/models/MiniMax.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EDD_2/models/MiniMax.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/EDD_2/views/launcher.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/EDD_2/views/launcher.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/controllers/GamePvCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/controllers/GamePvCController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/models/MiniMax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/models/MiniMax.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/EDD_2/controllers/GameCvCController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EDD_2/controllers/GameCvCController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/controllers/GameCvCController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/controllers/GameCvCController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
