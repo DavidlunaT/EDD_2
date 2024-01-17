@@ -63,4 +63,9 @@ public class LauncherController implements Initializable {
         btn.setOnMouseEntered(e -> btn.setStyle(hovered));
         btn.setOnMouseExited(e -> btn.setStyle(style));
     }
+
+    @FXML
+    private void switchToRankingController(ActionEvent event) {
+        try {App.setRoot("ranking");} catch (IOException ex) {}
+    }
 }

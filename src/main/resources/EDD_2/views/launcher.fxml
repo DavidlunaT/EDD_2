@@ -60,5 +60,6 @@
       <Line endX="-141.972900390625" endY="407.5" layoutX="185.0" layoutY="43.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />
       <Line endX="427.87005615234375" endY="-1.33514404296875E-5" layoutX="167.0" layoutY="451.0" startX="-123.4729232788086" startY="-1.33514404296875E-5" stroke="#eee000" />
       <Line endX="-142.62994384765625" endY="407.0" layoutX="738.0" layoutY="44.0" startX="-141.97291564941406" startY="-14.500009536743164" stroke="#eee000" />
+      <Button layoutX="508.0" layoutY="38.0" mnemonicParsing="false" onAction="#switchToRankingController" text="Best Players" />
    </children>
 </AnchorPane>

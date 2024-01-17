@@ -122,7 +122,7 @@ public class SelectingController implements Initializable {
     }
     
     public void setPlayerName(){
-        if(!txtPlayerName.getText().equals(""))
+        if(!txtPlayerName.getText().equals("Write your name"))
            {playerName = txtPlayerName.getText();}
         else
             {playerName = "guest"; }
