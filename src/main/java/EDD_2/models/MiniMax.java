@@ -65,7 +65,11 @@ public class MiniMax {
         for (Tree<Board> rootChild : rootChildren) {
             List<Tree<Board>> childChildren = rootChild.getRootNode().getChildren();
             List<Integer> utilities = childrenUtilities(childChildren);
-            int min = Collections.min(utilities);
+            System.out.println(utilities);
+            int min = Integer.MIN_VALUE;
+            if(!utilities.isEmpty()){
+                min = Collections.min(utilities);
+            }
             rootChild.getRoot().setUtility(min);
         }
     }
