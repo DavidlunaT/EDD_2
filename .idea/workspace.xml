@@ -4,17 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0375992-f828-41e6-8dcb-34c9f3411208" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/EDD_2/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/EDD_2/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/App.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/controllers/GameController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/controllers/GameController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/dataStructures/Tree.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/dataStructures/Tree.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/models/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/models/Board.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/models/Computer.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/models/Computer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/EDD_2/models/MiniMax.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/EDD_2/models/MiniMax.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="c0375992-f828-41e6-8dcb-34c9f3411208" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -23,22 +13,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2aC52rwC2a6SxxcwJ6yi8xDCHgg" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "D:/EDD_2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/EDD_2&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

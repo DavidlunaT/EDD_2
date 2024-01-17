@@ -39,7 +39,10 @@
       <RadioButton fx:id="YesBtn" contentDisplay="TOP" layoutX="118.0" layoutY="302.0" mnemonicParsing="false" styleClass="container" stylesheets="@../../styles/selecting.css" text="Yes" textFill="#01dbd9">
          <font>
             <Font name="Courier New Bold" size="20.0" />
-         </font></RadioButton>
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="yn" />
+         </toggleGroup></RadioButton>
       <Label layoutX="146.0" layoutY="63.0" text="Choose your skin" textFill="#eee000">
          <font>
             <Font name="Courier New Bold" size="36.0" />
@@ -54,7 +57,7 @@
          <font>
             <Font name="Courier New Italic" size="12.0" />
          </font></TextField>
-      <RadioButton fx:id="NoBtn" contentDisplay="TOP" layoutX="215.0" layoutY="302.0" mnemonicParsing="false" styleClass="container" stylesheets="@../../styles/selecting.css" text="No" textFill="#01dbd9">
+      <RadioButton fx:id="NoBtn" contentDisplay="TOP" layoutX="215.0" layoutY="302.0" mnemonicParsing="false" styleClass="container" stylesheets="@../../styles/selecting.css" text="No" textFill="#01dbd9" toggleGroup="$yn">
          <font>
             <Font name="Courier New Bold" size="20.0" />
          </font>
