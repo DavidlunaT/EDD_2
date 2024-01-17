@@ -13,7 +13,7 @@ import EDD_2.models.Ranking;
 import java.io.IOException;
 import static java.lang.Thread.sleep;
 import java.net.URL;
-import java.time.Duration;
+import javafx.util.Duration;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -28,14 +28,13 @@ import javafx.scene.input.MouseDragEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 
-
 /**
  * FXML Controller class
  *
  * @author David
  */
 public class GameCvCController implements Initializable {
-    
+
     @FXML
     private Button button1;
 
@@ -83,16 +82,15 @@ public class GameCvCController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         App.isX = true;
+        
         //creacion de board
         this.board = new Board();
-       
-            Computer playerCircle = new Computer(2, board);
-            this.computer2 = playerCircle;
-
-            Computer playerX = new Computer(1, board);
-
-            this.computer1 = playerX;
         
+        Computer playerCircle = new Computer(2, board);
+        this.computer2 = playerCircle;
+
+        Computer playerX = new Computer(1, board);
+        this.computer1 = playerX;
 
         buttons = new ArrayList<>(Arrays.asList(button1, button2, button3, button4, button5, button6, button7, button8, button9));
 
@@ -101,17 +99,15 @@ public class GameCvCController implements Initializable {
         });
         this.changeFillOfButtons();
         winnerText.setOnMouseClicked(event -> {
-            // Llamar al método que deseas ejecutar
             start();
         });
-
 
     }
 
     @FXML
     void restartGame(ActionEvent event) {
         buttons.forEach(this::resetButton);
-        
+
     }
 
     @FXML
@@ -126,65 +122,37 @@ public class GameCvCController implements Initializable {
     public void resetButton(Button button) {
 
         board.clear();
-
+        button.setText("");
         gameOver = false;
-          while(!gameOver){
-            ComputersMovesManager();
-        }
-        
+
     }
 
     public void ComputersMovesManager() {
-
-        if (App.isX ==  true) {
+        if (App.isX == true) {
             //computer1 turn
-             Platform.runLater(() -> {
             winnerText.setText("X Turn...");
-            });
-            //Sleep
-            sleepThread(1000);
             computerMove(computer1, computer2);
-            
-            
             App.isX = false;
-            
-        }
-        else{
-            System.out.println("O turn");
-             //computer2 turn
+        } else {
+            //computer2 turn
             winnerText.setText("O Turn...");
-            //Sleep
-            sleepThread(1000);
             computerMove(computer2, computer1);
             App.isX = true;
-            
         }
     }
-    private void sleepThread(int milliseconds) {
-        
-            try {
-                // Pausar el hilo durante el tiempo especificado
-                Thread.sleep(milliseconds);
-
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-    
 
     //Computadora ejecuta su movimiento
     public void computerMove(Computer computer, Computer computerOp) {
         if (!gameOver) {
             //movimiento de Pc     
             int posicionOptima = 0;
-            
+
             posicionOptima = computer.calculateBestMove(board, computer.getId(), computerOp.getId());
-                                 
+
             board.setMove(posicionOptima, computer.getId());
             Button SelectedButton = buttons.get(posicionOptima);
             if (App.isX) {
                 SelectedButton.setText("O");
-               
 
             } else {
                 SelectedButton.setText("X");
@@ -200,22 +168,19 @@ public class GameCvCController implements Initializable {
         int winner = board.whoIsWinner(board.x, board.o);
         if (winner == board.x) {
             winnerText.setText("X WON!");
-            
 
             gameOver = true;
         } else if (winner == board.o) {
             winnerText.setText("O WON!");
-            
+
             gameOver = true;
         } else if (winner == -1) {
             winnerText.setText("TIE");
-            
+
             gameOver = true;
         }
 
     }
-
-
 
     public void changeFillOfButtons() {
         changeTextColor(button1);
@@ -238,8 +203,13 @@ public class GameCvCController implements Initializable {
     }
 
     public void start() {
-        while (!gameOver) {
-            ComputersMovesManager();
-        }
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> {
+                    // Método que se ejecutará cada 2 segundos
+                    if(!gameOver)ComputersMovesManager();
+                })
+        );
+        timeline.setCycleCount(Timeline.INDEFINITE);
+        timeline.play();
     }
 }
