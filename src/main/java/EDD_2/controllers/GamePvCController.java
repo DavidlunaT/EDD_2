@@ -196,7 +196,7 @@ public class GamePvCController implements Initializable {
                     }
                 }
             }
-
+            
             //visualizar el board
             for (int i = 0; i < 9; i++) {
                 System.out.print(board.getBoard()[i]);
@@ -239,6 +239,7 @@ public class GamePvCController implements Initializable {
                 SelectedButton.setDisable(true);
             }
         }
+        checkIfGameIsOver();
 
     }
 
