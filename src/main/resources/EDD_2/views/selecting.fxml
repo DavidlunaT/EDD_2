@@ -62,7 +62,7 @@
             <Font name="Courier New Bold" size="20.0" />
          </font>
       </RadioButton>
-      <Label fx:id="startLabel" layoutX="118.0" layoutY="273.0" prefHeight="17.0" prefWidth="171.0" textFill="#eee000">
+      <Label fx:id="startLabel" layoutX="118.0" layoutY="273.0" prefHeight="17.0" prefWidth="171.0" text="Start?" textFill="#eee000">
          <font>
             <Font name="Courier New Bold" size="15.0" />
          </font>
