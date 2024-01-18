@@ -31,17 +31,19 @@ public class MiniMax {
         gameTree(idTurn, idOponent); //Crear el arbol y lo llena los 2 niveles
         setMin(); //Setea la utilidad de los boards hijos
     }
-
+    
+    //Crea el arbol completo de los 2 siguientes turnos a partir del board actual
     public void gameTree(int idTurn, int idOponent) {
         treeGame = new Tree<>(currentBoard);
         List<Tree<Board>> states = createStates(idTurn, currentBoard);
         treeGame.getRootNode().setChildren(states);
-        for (Tree<Board> children : states) {
-            List<Tree<Board>> oponentStates = createStates(idOponent, children.getRoot());
-            children.getRootNode().setChildren(oponentStates);
+        for (Tree<Board> child : states) {
+            List<Tree<Board>> oponentStates = createStates(idOponent, child.getRoot());
+            child.getRootNode().setChildren(oponentStates);
         }
     }
-
+    
+    //Crea todos los posibles estados del board de la tabla actual
     public List<Tree<Board>> createStates(int idPlayer, Board b) {
         List<Tree<Board>> states = new ArrayList<>();
         for (int i = 0; i < size; i++) {
@@ -64,9 +66,11 @@ public class MiniMax {
         List<Tree<Board>> rootChildren = treeGame.getRootNode().getChildren();
         for (Tree<Board> rootChild : rootChildren) {
             List<Tree<Board>> childChildren = rootChild.getRootNode().getChildren();
+            
             List<Integer> utilities = childrenUtilities(childChildren);
             System.out.println(utilities);
             int min = Integer.MIN_VALUE;
+            
             if(!utilities.isEmpty()){
                 min = Collections.min(utilities);
             }
@@ -77,7 +81,9 @@ public class MiniMax {
     public List<Integer> childrenUtilities(List<Tree<Board>> children) {
         List<Integer> utilities = new ArrayList<>();
         for (Tree<Board> c : children) {
+            //Verificar----------
             int utility = c.getRoot().utility(playerTurn);
+            //-------------------
             utilities.add(utility);
         }
         return utilities;
@@ -114,7 +120,7 @@ public class MiniMax {
         int maxUtility = Integer.MIN_VALUE;
         for (Tree<Board> tb : rootTreeGame) {
             Board b = tb.getRoot();
-            maxUtility = Math.max(maxUtility, b.getUtility()); //crear getUtility
+            maxUtility = Math.max(maxUtility, b.getUtility());
         }
         return maxUtility;
     }

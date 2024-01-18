@@ -22,7 +22,7 @@
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>
-      <Button fx:id="btn3" layoutX="156.0" layoutY="334.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000;" text="Computer vs Computer" textFill="#eee000">
+      <Button fx:id="btn3" layoutX="156.0" layoutY="334.0" mnemonicParsing="false" onAction="#CvC" prefHeight="55.0" prefWidth="344.0" style="-fx-background-color: black; -fx-border-color: #EEE000;" text="Computer vs Computer" textFill="#eee000">
          <font>
             <Font name="Courier New" size="25.0" />
          </font></Button>

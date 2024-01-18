@@ -61,5 +61,8 @@ public class LauncherController implements Initializable {
         btn.setOnMouseEntered(e -> btn.setStyle(hovered));
         btn.setOnMouseExited(e -> btn.setStyle(style));
     }
-  
+
+    public void CvC(ActionEvent actionEvent) throws IOException{
+        try {App.setRoot("gameCvC");} catch (IOException ex) {}
+    }
 }

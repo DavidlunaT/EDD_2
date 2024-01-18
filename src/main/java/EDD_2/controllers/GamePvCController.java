@@ -196,7 +196,7 @@ public class GamePvCController implements Initializable {
                     }
                 }
             }
-
+            
             //visualizar el board
             for (int i = 0; i < 9; i++) {
                 System.out.print(board.getBoard()[i]);
@@ -225,14 +225,8 @@ public class GamePvCController implements Initializable {
         if (!gameOver) {
             //movimiento de Pc     
             int posicionOptima = 0;
-            if(computer.bloquearJugadaGanadora(board.getBoard(), player.getId()) != -1){
-                posicionOptima = computer.bloquearJugadaGanadora(board.getBoard(), player.getId());
-            } else if((computer.obtenerJugadaGanadora(board.getBoard(), computer.getId()) != -1) && computer.bloquearJugadaGanadora(board.getBoard(), player.getId()) != -1){
-                posicionOptima = computer.obtenerJugadaGanadora(board.getBoard(), player.getId());
-            }
-            else{
-                posicionOptima = computer.calculateBestMove(board, computer.getId(), player.getId());
-            }                      
+            posicionOptima = computer.calculateBestMove(board, computer.getId(), player.getId());
+                                 
             board.setMove(posicionOptima, computer.getId());
             Button SelectedButton = buttons.get(posicionOptima);
             if (App.isX) {
@@ -244,6 +238,7 @@ public class GamePvCController implements Initializable {
                 SelectedButton.setDisable(true);
             }
         }
+        checkIfGameIsOver();
 
     }
 
